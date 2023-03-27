@@ -13,6 +13,7 @@
 		8FE8660129D168E4000FCAD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE865FF29D168E4000FCAD0 /* Main.storyboard */; };
 		8FE8660329D168E6000FCAD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8660229D168E6000FCAD0 /* Assets.xcassets */; };
 		8FE8660629D168E6000FCAD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8660429D168E6000FCAD0 /* LaunchScreen.storyboard */; };
+		8FE8660E29D16A6F000FCAD0 /* RandomSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8660D29D16A6F000FCAD0 /* RandomSquare.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8FE8660229D168E6000FCAD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FE8660529D168E6000FCAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FE8660729D168E6000FCAD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FE8660D29D16A6F000FCAD0 /* RandomSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSquare.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,24 @@
 		8FE865F829D168E4000FCAD0 /* DrawingApp */ = {
 			isa = PBXGroup;
 			children = (
-				8FE865F929D168E4000FCAD0 /* AppDelegate.swift */,
-				8FE865FB29D168E4000FCAD0 /* SceneDelegate.swift */,
-				8FE865FD29D168E4000FCAD0 /* ViewController.swift */,
-				8FE865FF29D168E4000FCAD0 /* Main.storyboard */,
+				8FE8660F29D16BA7000FCAD0 /* Supporting Files */,
 				8FE8660229D168E6000FCAD0 /* Assets.xcassets */,
 				8FE8660429D168E6000FCAD0 /* LaunchScreen.storyboard */,
-				8FE8660729D168E6000FCAD0 /* Info.plist */,
+				8FE865FF29D168E4000FCAD0 /* Main.storyboard */,
+				8FE8660D29D16A6F000FCAD0 /* RandomSquare.swift */,
+				8FE865FD29D168E4000FCAD0 /* ViewController.swift */,
 			);
 			path = DrawingApp;
+			sourceTree = "<group>";
+		};
+		8FE8660F29D16BA7000FCAD0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8FE865F929D168E4000FCAD0 /* AppDelegate.swift */,
+				8FE8660729D168E6000FCAD0 /* Info.plist */,
+				8FE865FB29D168E4000FCAD0 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 				8FE865FE29D168E4000FCAD0 /* ViewController.swift in Sources */,
 				8FE865FA29D168E4000FCAD0 /* AppDelegate.swift in Sources */,
 				8FE865FC29D168E4000FCAD0 /* SceneDelegate.swift in Sources */,
+				8FE8660E29D16A6F000FCAD0 /* RandomSquare.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +300,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DrawingApp/Info.plist;
+				INFOPLIST_FILE = "DrawingApp/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -318,7 +330,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DrawingApp/Info.plist;
+				INFOPLIST_FILE = "DrawingApp/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
