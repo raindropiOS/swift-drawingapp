@@ -14,7 +14,22 @@
 		8FE8660329D168E6000FCAD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8660229D168E6000FCAD0 /* Assets.xcassets */; };
 		8FE8660629D168E6000FCAD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8660429D168E6000FCAD0 /* LaunchScreen.storyboard */; };
 		8FE8660E29D16A6F000FCAD0 /* RandomSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8660D29D16A6F000FCAD0 /* RandomSquare.swift */; };
+		8FE8661129D1714C000FCAD0 /* SquareFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8661029D1714C000FCAD0 /* SquareFactory.swift */; };
+		8FE8661929D17782000FCAD0 /* DrawingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8661829D17782000FCAD0 /* DrawingAppTests.swift */; };
+		8FE8661F29D177D2000FCAD0 /* SquareFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8661029D1714C000FCAD0 /* SquareFactory.swift */; };
+		8FE8662129D17A28000FCAD0 /* IdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8662029D17A28000FCAD0 /* IdGenerator.swift */; };
+		8FE8662229D17A28000FCAD0 /* IdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8662029D17A28000FCAD0 /* IdGenerator.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8FE8661A29D17782000FCAD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FE865EE29D168E4000FCAD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FE865F529D168E4000FCAD0;
+			remoteInfo = DrawingApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8FE865F629D168E4000FCAD0 /* DrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +41,21 @@
 		8FE8660529D168E6000FCAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FE8660729D168E6000FCAD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FE8660D29D16A6F000FCAD0 /* RandomSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSquare.swift; sourceTree = "<group>"; };
+		8FE8661029D1714C000FCAD0 /* SquareFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareFactory.swift; sourceTree = "<group>"; };
+		8FE8661629D17782000FCAD0 /* DrawingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE8661829D17782000FCAD0 /* DrawingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingAppTests.swift; sourceTree = "<group>"; };
+		8FE8662029D17A28000FCAD0 /* IdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8FE865F329D168E4000FCAD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE8661329D17782000FCAD0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				8FE865F829D168E4000FCAD0 /* DrawingApp */,
+				8FE8661729D17782000FCAD0 /* DrawingAppTests */,
 				8FE865F729D168E4000FCAD0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				8FE865F629D168E4000FCAD0 /* DrawingApp.app */,
+				8FE8661629D17782000FCAD0 /* DrawingAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +92,8 @@
 				8FE865FF29D168E4000FCAD0 /* Main.storyboard */,
 				8FE8660D29D16A6F000FCAD0 /* RandomSquare.swift */,
 				8FE865FD29D168E4000FCAD0 /* ViewController.swift */,
+				8FE8661029D1714C000FCAD0 /* SquareFactory.swift */,
+				8FE8662029D17A28000FCAD0 /* IdGenerator.swift */,
 			);
 			path = DrawingApp;
 			sourceTree = "<group>";
@@ -76,6 +106,14 @@
 				8FE865FB29D168E4000FCAD0 /* SceneDelegate.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8FE8661729D17782000FCAD0 /* DrawingAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				8FE8661829D17782000FCAD0 /* DrawingAppTests.swift */,
+			);
+			path = DrawingAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +136,24 @@
 			productReference = 8FE865F629D168E4000FCAD0 /* DrawingApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8FE8661529D17782000FCAD0 /* DrawingAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FE8661C29D17782000FCAD0 /* Build configuration list for PBXNativeTarget "DrawingAppTests" */;
+			buildPhases = (
+				8FE8661229D17782000FCAD0 /* Sources */,
+				8FE8661329D17782000FCAD0 /* Frameworks */,
+				8FE8661429D17782000FCAD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FE8661B29D17782000FCAD0 /* PBXTargetDependency */,
+			);
+			name = DrawingAppTests;
+			productName = DrawingAppTests;
+			productReference = 8FE8661629D17782000FCAD0 /* DrawingAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -109,6 +165,9 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					8FE865F529D168E4000FCAD0 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					8FE8661529D17782000FCAD0 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -127,6 +186,7 @@
 			projectRoot = "";
 			targets = (
 				8FE865F529D168E4000FCAD0 /* DrawingApp */,
+				8FE8661529D17782000FCAD0 /* DrawingAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -142,6 +202,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8FE8661429D17782000FCAD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -150,13 +217,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FE865FE29D168E4000FCAD0 /* ViewController.swift in Sources */,
+				8FE8661129D1714C000FCAD0 /* SquareFactory.swift in Sources */,
 				8FE865FA29D168E4000FCAD0 /* AppDelegate.swift in Sources */,
 				8FE865FC29D168E4000FCAD0 /* SceneDelegate.swift in Sources */,
+				8FE8662129D17A28000FCAD0 /* IdGenerator.swift in Sources */,
 				8FE8660E29D16A6F000FCAD0 /* RandomSquare.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8FE8661229D17782000FCAD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE8661929D17782000FCAD0 /* DrawingAppTests.swift in Sources */,
+				8FE8662229D17A28000FCAD0 /* IdGenerator.swift in Sources */,
+				8FE8661F29D177D2000FCAD0 /* SquareFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8FE8661B29D17782000FCAD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FE865F529D168E4000FCAD0 /* DrawingApp */;
+			targetProxy = 8FE8661A29D17782000FCAD0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8FE865FF29D168E4000FCAD0 /* Main.storyboard */ = {
@@ -352,6 +439,44 @@
 			};
 			name = Release;
 		};
+		8FE8661D29D17782000FCAD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eddie.DrawingAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8FE8661E29D17782000FCAD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eddie.DrawingAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -369,6 +494,15 @@
 			buildConfigurations = (
 				8FE8660B29D168E6000FCAD0 /* Debug */,
 				8FE8660C29D168E6000FCAD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FE8661C29D17782000FCAD0 /* Build configuration list for PBXNativeTarget "DrawingAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FE8661D29D17782000FCAD0 /* Debug */,
+				8FE8661E29D17782000FCAD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
