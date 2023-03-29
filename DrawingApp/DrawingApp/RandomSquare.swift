@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RandomSquare: Square {
+class RandomSquare: Shape {
     let id: Id
     let point: Point
     let size: Size

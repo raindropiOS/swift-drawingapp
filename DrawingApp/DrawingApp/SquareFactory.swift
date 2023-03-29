@@ -8,7 +8,7 @@
 import Foundation
 
 class SquareFactory {
-    static func makeSquare(point: Point, size: Size, kind: SquareKind) -> Square? {
+    static func makeSquare(point: Point, size: Size, kind: SquareKind) -> Shape? {
         switch kind {
         case .random:
             return returnRandomSquare(point: point, size: size)
@@ -30,7 +30,7 @@ enum SquareKind {
     case random
 }
 
-protocol Square {
+protocol Shape {
     var point: Point { get }
     var size: Size { get }
 }
