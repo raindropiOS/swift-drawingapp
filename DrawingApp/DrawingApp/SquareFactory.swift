@@ -8,21 +8,21 @@
 import Foundation
 
 class SquareFactory {
-    static func makeSquare(x: Double, y: Double, width: Double, height: Double, kind: SquareKind) -> Square? {
+    static func makeSquare(point: Point, size: Size, kind: SquareKind) -> Square? {
         switch kind {
         case .random:
-            return returnRandomSquare(x: x, y: y, width: width, height: height)
+            return returnRandomSquare(point: point, size: size)
         }
     }
     
-    static func returnRandomSquare(x: Double, y: Double, width: Double, height: Double) -> RandomSquare? {
-        guard let id = IdGenerator.generateId(length: 9, separateAt: 4) else {return nil}
+    static func returnRandomSquare(point: Point, size: Size) -> RandomSquare? {
+        guard let id = IdGenerator.generateId(length: 9, separateAt: 4) else { return nil }
         let r = CGFloat.random(in: 0...255)
         let g = CGFloat.random(in: 0...255)
         let b = CGFloat.random(in: 0...255)
         let alpha = CGFloat.random(in: 1...10)
         
-        return RandomSquare(id: id, x: x, y: y, width: width, height: height, bgColor: (r, g, b), alpha: alpha)
+        return RandomSquare(id: id, point: point, size: size, bgColor: (r, g, b), alpha: alpha)
     }
 }
 
@@ -31,8 +31,6 @@ enum SquareKind {
 }
 
 protocol Square {
-    var x: Double { get }
-    var y: Double { get }
-    var width: Double { get }
-    var height: Double { get }
+    var point: Point { get }
+    var size: Size { get }
 }

@@ -9,19 +9,15 @@ import Foundation
 
 class RandomSquare: Square {
     let id: Id
-    let x: Double
-    let y: Double
-    let width: Double
-    let height: Double
+    let point: Point
+    let size: Size
     let bgColor: (CGFloat, CGFloat, CGFloat)
     let alpha: CGFloat
     
-    init(id: Id, x: Double, y: Double, width: Double, height: Double, bgColor: (CGFloat, CGFloat, CGFloat), alpha: CGFloat) {
+    init(id: Id, point: Point, size: Size, bgColor: (CGFloat, CGFloat, CGFloat), alpha: CGFloat) {
         self.id = id
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
+        self.point = point
+        self.size = size
         self.bgColor = bgColor
         self.alpha = alpha
     }
@@ -29,6 +25,6 @@ class RandomSquare: Square {
 
 extension RandomSquare: CustomStringConvertible {
     var description: String {
-        "(\(id.value)), X:\(x), Y:\(y), W\(width), H\(height), R:\(bgColor.0), G:\(bgColor.1), B:\(bgColor.2)"
+        "(\(id.value)), X:\(point.x), Y:\(point.y), W\(size.width), H\(size.height), R:\(bgColor.0), G:\(bgColor.1), B:\(bgColor.2)"
     }
 }
