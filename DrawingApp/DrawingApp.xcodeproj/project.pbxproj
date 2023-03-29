@@ -13,7 +13,7 @@
 		8FE8660129D168E4000FCAD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE865FF29D168E4000FCAD0 /* Main.storyboard */; };
 		8FE8660329D168E6000FCAD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8660229D168E6000FCAD0 /* Assets.xcassets */; };
 		8FE8660629D168E6000FCAD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE8660429D168E6000FCAD0 /* LaunchScreen.storyboard */; };
-		8FE8660E29D16A6F000FCAD0 /* RandomSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8660D29D16A6F000FCAD0 /* RandomSquare.swift */; };
+		8FE8660E29D16A6F000FCAD0 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8660D29D16A6F000FCAD0 /* Rectangle.swift */; };
 		8FE8661129D1714C000FCAD0 /* SquareFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8661029D1714C000FCAD0 /* SquareFactory.swift */; };
 		8FE8661929D17782000FCAD0 /* DrawingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8661829D17782000FCAD0 /* DrawingAppTests.swift */; };
 		8FE8662129D17A28000FCAD0 /* IdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8662029D17A28000FCAD0 /* IdGenerator.swift */; };
@@ -41,7 +41,7 @@
 		8FE8660229D168E6000FCAD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FE8660529D168E6000FCAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FE8660729D168E6000FCAD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8FE8660D29D16A6F000FCAD0 /* RandomSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSquare.swift; sourceTree = "<group>"; };
+		8FE8660D29D16A6F000FCAD0 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 		8FE8661029D1714C000FCAD0 /* SquareFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareFactory.swift; sourceTree = "<group>"; };
 		8FE8661629D17782000FCAD0 /* DrawingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE8661829D17782000FCAD0 /* DrawingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingAppTests.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				8FE8660229D168E6000FCAD0 /* Assets.xcassets */,
 				8FE8660429D168E6000FCAD0 /* LaunchScreen.storyboard */,
 				8FE865FF29D168E4000FCAD0 /* Main.storyboard */,
-				8FE8660D29D16A6F000FCAD0 /* RandomSquare.swift */,
+				8FE8660D29D16A6F000FCAD0 /* Rectangle.swift */,
 				8FE865FD29D168E4000FCAD0 /* ViewController.swift */,
 				8FE8661029D1714C000FCAD0 /* SquareFactory.swift */,
 				8FE8666329D4011B000FCAD0 /* Point.swift */,
@@ -228,7 +228,7 @@
 				8FE865FC29D168E4000FCAD0 /* SceneDelegate.swift in Sources */,
 				8FE8666429D4011B000FCAD0 /* Point.swift in Sources */,
 				8FE8662129D17A28000FCAD0 /* IdGenerator.swift in Sources */,
-				8FE8660E29D16A6F000FCAD0 /* RandomSquare.swift in Sources */,
+				8FE8660E29D16A6F000FCAD0 /* Rectangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

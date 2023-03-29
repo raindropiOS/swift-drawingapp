@@ -15,14 +15,14 @@ class SquareFactory {
         }
     }
     
-    static func returnRandomSquare(point: Point, size: Size) -> RandomSquare? {
+    static func returnRandomSquare(point: Point, size: Size) -> Rectangle? {
         guard let id = IdGenerator.generateId(length: 9, separateAt: 4) else { return nil }
         let r = CGFloat.random(in: 0...255)
         let g = CGFloat.random(in: 0...255)
         let b = CGFloat.random(in: 0...255)
         let alpha = CGFloat.random(in: 1...10)
         
-        return RandomSquare(id: id, point: point, size: size, bgColor: (r, g, b), alpha: alpha)
+        return Rectangle(id: id, point: point, size: size, bgColor: (r, g, b), alpha: alpha)
     }
 }
 

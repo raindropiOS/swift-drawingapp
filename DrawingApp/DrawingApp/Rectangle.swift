@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RandomSquare: Shape {
+class Rectangle: Shape {
     let id: Id
     let point: Point
     let size: Size
@@ -23,7 +23,7 @@ class RandomSquare: Shape {
     }
 }
 
-extension RandomSquare: CustomStringConvertible {
+extension Rectangle: CustomStringConvertible {
     var description: String {
         "(\(id.value)), X:\(point.x), Y:\(point.y), W\(size.width), H\(size.height), R:\(bgColor.0), G:\(bgColor.1), B:\(bgColor.2)"
     }
