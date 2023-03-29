@@ -13,4 +13,5 @@
 - [ ] NotficationCenter 동작 방식 학습 정리
 
 # 레퍼런스
-팩토리 메소드 패턴 : https://refactoring.guru/ko/design-patterns/factory-method
+* [팩토리 메소드 패턴](https://refactoring.guru/ko/design-patterns/factory-method  )
+* [CGFloat는 이미 만들어진 framework를 위해 쓰자](https://developer.apple.com/forums/thread/28996)
