@@ -12,10 +12,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addRandomSquares(count: 4, size: Size(width: 150, height: 120))
+        addRandomRectangles(count: 4, size: Size(width: 150, height: 120))
     }
     
-    func addRandomSquares(count: Int, size: Size) {
+    func addRandomRectangles(count: Int, size: Size) {
         guard count > 0 else { return }
         let customLogger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
         
