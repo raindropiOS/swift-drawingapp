@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SquareFactory {
+class ShapeFactory {
     static func makeSquare(point: Point, size: Size, kind: SquareKind) -> Shape? {
         switch kind {
         case .random:

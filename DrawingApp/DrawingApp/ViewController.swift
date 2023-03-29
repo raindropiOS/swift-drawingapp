@@ -27,7 +27,7 @@ class ViewController: UIViewController {
             let x = Double.random(in: xBoundary)
             let y = Double.random(in: yBoundary)
             let point = Point(x: x, y: y)
-            if let randomSquare = SquareFactory.makeSquare(point: point, size: size, kind: .random) as? Rectangle {
+            if let randomSquare = ShapeFactory.makeSquare(point: point, size: size, kind: .random) as? Rectangle {
                 // TODO: 뷰에 추가하기
                 customLogger.log("\(name) \(randomSquare.description)")
             }
