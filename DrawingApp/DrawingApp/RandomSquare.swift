@@ -8,7 +8,7 @@
 import Foundation
 
 class RandomSquare: Square {
-    let id: String
+    let id: Id
     let x: Double
     let y: Double
     let width: Double
@@ -16,7 +16,7 @@ class RandomSquare: Square {
     let bgColor: (CGFloat, CGFloat, CGFloat)
     let alpha: CGFloat
     
-    init(id: String, x: Double, y: Double, width: Double, height: Double, bgColor: (CGFloat, CGFloat, CGFloat), alpha: CGFloat) {
+    init(id: Id, x: Double, y: Double, width: Double, height: Double, bgColor: (CGFloat, CGFloat, CGFloat), alpha: CGFloat) {
         self.id = id
         self.x = x
         self.y = y
@@ -29,6 +29,6 @@ class RandomSquare: Square {
 
 extension RandomSquare: CustomStringConvertible {
     var description: String {
-        "(\(id)), X:\(x), Y:\(y), W\(width), H\(height), R:\(bgColor.0), G:\(bgColor.1), B:\(bgColor.2)"
+        "(\(id.value)), X:\(x), Y:\(y), W\(width), H\(height), R:\(bgColor.0), G:\(bgColor.1), B:\(bgColor.2)"
     }
 }

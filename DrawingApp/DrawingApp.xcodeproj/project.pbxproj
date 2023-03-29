@@ -16,7 +16,6 @@
 		8FE8660E29D16A6F000FCAD0 /* RandomSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8660D29D16A6F000FCAD0 /* RandomSquare.swift */; };
 		8FE8661129D1714C000FCAD0 /* SquareFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8661029D1714C000FCAD0 /* SquareFactory.swift */; };
 		8FE8661929D17782000FCAD0 /* DrawingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8661829D17782000FCAD0 /* DrawingAppTests.swift */; };
-		8FE8661F29D177D2000FCAD0 /* SquareFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8661029D1714C000FCAD0 /* SquareFactory.swift */; };
 		8FE8662129D17A28000FCAD0 /* IdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8662029D17A28000FCAD0 /* IdGenerator.swift */; };
 		8FE8662229D17A28000FCAD0 /* IdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8662029D17A28000FCAD0 /* IdGenerator.swift */; };
 /* End PBXBuildFile section */
@@ -231,7 +230,6 @@
 			files = (
 				8FE8661929D17782000FCAD0 /* DrawingAppTests.swift in Sources */,
 				8FE8662229D17A28000FCAD0 /* IdGenerator.swift in Sources */,
-				8FE8661F29D177D2000FCAD0 /* SquareFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

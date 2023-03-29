@@ -8,22 +8,25 @@
 import Foundation
 
 class IdGenerator {
-    static func generateId(length: Int, separateAt: Int) -> String {
-        guard length > 0 else { return "" }
-        var isRemainderZero: Bool {
-            length % separateAt == 0
-        }
+    // length는 id를 이루는 글자의 수를 의미합니다. separateAt은 몇 번째마다 "-"를 추가해서 나타낼지 표현합니다. generateId(length: 10, seaparateAt: 4)의 결과물은 123-456-789-1과 같습니다.
+    static func generateId(length: Int, separateAt: Int) -> Id? {
+        guard length > 0 else { return nil }
+        var isRemainderZero: Bool = length % separateAt == 0
         var totalLength: Int
         let alphabetAndNumber = "abcdefghijklmnopqrstuvwxyz0123456789"
-        var generatedId: String = ""
+        var generatedIdValue: String = ""
         
         totalLength = length
         totalLength += isRemainderZero ? length / separateAt - 1 : length / separateAt
         for i in 1...totalLength {
-            if i % separateAt == 0 { generatedId.append("-"); continue }
-            generatedId += String(alphabetAndNumber.randomElement() ?? "!")
+            if i % separateAt == 0 { generatedIdValue.append("-"); continue }
+            generatedIdValue += String(alphabetAndNumber.randomElement() ?? "!")
         }
         
-        return generatedId
+        return Id(value: generatedIdValue)
     }
+}
+
+struct Id {
+    let value: String
 }

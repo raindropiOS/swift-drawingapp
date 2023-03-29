@@ -15,8 +15,8 @@ class SquareFactory {
         }
     }
     
-    static func returnRandomSquare(x: Double, y: Double, width: Double, height: Double) -> RandomSquare {
-        let id: String = IdGenerator.generateId(length: 9, separateAt: 4)
+    static func returnRandomSquare(x: Double, y: Double, width: Double, height: Double) -> RandomSquare? {
+        guard let id = IdGenerator.generateId(length: 9, separateAt: 4) else {return nil}
         let r = CGFloat.random(in: 0...255)
         let g = CGFloat.random(in: 0...255)
         let b = CGFloat.random(in: 0...255)
