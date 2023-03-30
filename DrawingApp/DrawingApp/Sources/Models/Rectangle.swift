@@ -11,10 +11,10 @@ class Rectangle: Shape {
     private let id: Id
     let point: Point
     let size: Size
-    let backgroundColor: (CGFloat, CGFloat, CGFloat)
-    let alpha: CGFloat
+    let backgroundColor: Color
+    let alpha: Int
     
-    init(id: Id, point: Point, size: Size, bgColor: (CGFloat, CGFloat, CGFloat), alpha: CGFloat) {
+    init(id: Id, point: Point, size: Size, bgColor: Color, alpha: Int) {
         self.id = id
         self.point = point
         self.size = size
@@ -25,6 +25,6 @@ class Rectangle: Shape {
 
 extension Rectangle: CustomStringConvertible {
     var description: String {
-        "(\(id.value)), X:\(point.x), Y:\(point.y), W\(size.width), H\(size.height), R:\(backgroundColor.0), G:\(backgroundColor.1), B:\(backgroundColor.2)"
+        "(\(id.value)), X:\(point.x), Y:\(point.y), W\(size.width), H\(size.height), R:\(backgroundColor.r), G:\(backgroundColor.g), B:\(backgroundColor.b)"
     }
 }
