@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol Shape {
+    var point: Point { get }
+    var size: Size { get }
+}
