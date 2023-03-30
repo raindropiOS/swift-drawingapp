@@ -21,17 +21,22 @@ struct Plane {
         components[index]
     }
     
-    func checkIfThereIsRectangle(at point: Point) -> (isRectangleLocated: Bool, rectanglesOnPoint: Rectangle?) {
-        //TODO: 작성예정
-//        var rectanglesOnPoint: [Rectangle] = []
-//
-//        for component in components {
-//            
-//        }
-        return (false, nil)
-        
-        func doesRectangleIncludesThePoint() {
+    func returnForefrontShape(at point: Point) -> Shape? {
+        var foreFrontShapeWhichIncludesPoint: Shape? = nil
             
+        for component in components {
+            if doesShapeIncludes(point: point, shape: component) {
+                foreFrontShapeWhichIncludesPoint = component
+            }
         }
+        
+        return foreFrontShapeWhichIncludesPoint
+    }
+    
+    func doesShapeIncludes(point: Point, shape: Shape) -> Bool {
+        let xBoundary = shape.point.x...shape.point.x + shape.size.width
+        let yBoundary = shape.point.y...shape.point.y + shape.size.height
+        
+        return xBoundary.contains(point.x) && yBoundary.contains(point.y)
     }
 }
