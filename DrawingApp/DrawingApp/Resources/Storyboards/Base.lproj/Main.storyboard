@@ -29,7 +29,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="FK7-ne-XIU">
                     <connections>
-                        <action selector="tabView:" destination="BYZ-38-t0r" id="Qq4-2c-R99"/>
+                        <action selector="tapView:" destination="BYZ-38-t0r" id="ZYq-RU-JXp"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
