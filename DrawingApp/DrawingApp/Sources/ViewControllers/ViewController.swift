@@ -10,6 +10,11 @@ import OSLog
 
 class ViewController: UIViewController {
     
+    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+    @IBAction func tapView(_ sender: UITapGestureRecognizer) {
+        let point = tapGestureRecognizer.location(in: self.view)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addRandomRectangles(count: 4, size: Size(width: 150, height: 120))
