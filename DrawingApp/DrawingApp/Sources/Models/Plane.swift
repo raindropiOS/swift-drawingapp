@@ -23,16 +23,15 @@ struct Plane {
     
     func checkIfThereIsRectangle(at point: Point) -> (isRectangleLocated: Bool, rectanglesOnPoint: Rectangle?) {
         //TODO: 작성예정
-            var rectanglesOnPoint: [Rectangle] = []
+//        var rectanglesOnPoint: [Rectangle] = []
+//
+//        for component in components {
+//            
+//        }
+        return (false, nil)
+        
+        func doesRectangleIncludesThePoint() {
             
-            for component in components {
-                
-            }
-            return (false, nil)
-            
-            func doesRectangleIncludesThePoint() {
-                
-            }
         }
-
+    }
 }
