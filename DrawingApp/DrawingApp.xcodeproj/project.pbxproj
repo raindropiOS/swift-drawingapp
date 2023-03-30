@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F0F014529D52D2600A0AC1B /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F014429D52D2600A0AC1B /* Shape.swift */; };
+		8F0F014629D52F0F00A0AC1B /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8666329D4011B000FCAD0 /* Point.swift */; };
+		8F0F014729D52F1D00A0AC1B /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8666529D4015B000FCAD0 /* Size.swift */; };
+		8F0F014829D52F2700A0AC1B /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8666729D41D86000FCAD0 /* Plane.swift */; };
+		8F0F014929D52F2A00A0AC1B /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8660D29D16A6F000FCAD0 /* Rectangle.swift */; };
+		8F0F014A29D52F4D00A0AC1B /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F014429D52D2600A0AC1B /* Shape.swift */; };
 		8FE865FA29D168E4000FCAD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE865F929D168E4000FCAD0 /* AppDelegate.swift */; };
 		8FE865FC29D168E4000FCAD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE865FB29D168E4000FCAD0 /* SceneDelegate.swift */; };
 		8FE865FE29D168E4000FCAD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE865FD29D168E4000FCAD0 /* ViewController.swift */; };
@@ -34,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F0F014429D52D2600A0AC1B /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		8FE865F629D168E4000FCAD0 /* DrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE865F929D168E4000FCAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FE865FB29D168E4000FCAD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +48,7 @@
 		8FE8660029D168E4000FCAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FE8660229D168E6000FCAD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FE8660529D168E6000FCAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8FE8660729D168E6000FCAD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FE8660729D168E6000FCAD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "DrawingApp/Sources/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		8FE8660D29D16A6F000FCAD0 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 		8FE8661029D1714C000FCAD0 /* ShapeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeFactory.swift; sourceTree = "<group>"; };
 		8FE8661629D17782000FCAD0 /* DrawingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +77,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F0F013D29D52AF700A0AC1B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8FE8660229D168E6000FCAD0 /* Assets.xcassets */,
+				8F0F013E29D52B1F00A0AC1B /* Storyboards */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8F0F013E29D52B1F00A0AC1B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8FE8660429D168E6000FCAD0 /* LaunchScreen.storyboard */,
+				8FE865FF29D168E4000FCAD0 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8F0F013F29D52B4900A0AC1B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8F0F014129D52B7300A0AC1B /* Protocols */,
+				8FE8660F29D16BA7000FCAD0 /* Supporting Files */,
+				8F0F014029D52B6200A0AC1B /* Models */,
+				8F0F014229D52B9500A0AC1B /* ViewControllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8F0F014029D52B6200A0AC1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8FE8660D29D16A6F000FCAD0 /* Rectangle.swift */,
+				8FE8661029D1714C000FCAD0 /* ShapeFactory.swift */,
+				8FE8666329D4011B000FCAD0 /* Point.swift */,
+				8FE8666529D4015B000FCAD0 /* Size.swift */,
+				8FE8662029D17A28000FCAD0 /* IdGenerator.swift */,
+				8FE8666729D41D86000FCAD0 /* Plane.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8F0F014129D52B7300A0AC1B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8F0F014429D52D2600A0AC1B /* Shape.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8F0F014229D52B9500A0AC1B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8FE865FD29D168E4000FCAD0 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		8FE865ED29D168E4000FCAD0 = {
 			isa = PBXGroup;
 			children = (
@@ -91,17 +156,8 @@
 		8FE865F829D168E4000FCAD0 /* DrawingApp */ = {
 			isa = PBXGroup;
 			children = (
-				8FE8660F29D16BA7000FCAD0 /* Supporting Files */,
-				8FE8660229D168E6000FCAD0 /* Assets.xcassets */,
-				8FE8660429D168E6000FCAD0 /* LaunchScreen.storyboard */,
-				8FE865FF29D168E4000FCAD0 /* Main.storyboard */,
-				8FE8660D29D16A6F000FCAD0 /* Rectangle.swift */,
-				8FE865FD29D168E4000FCAD0 /* ViewController.swift */,
-				8FE8661029D1714C000FCAD0 /* ShapeFactory.swift */,
-				8FE8666329D4011B000FCAD0 /* Point.swift */,
-				8FE8666529D4015B000FCAD0 /* Size.swift */,
-				8FE8662029D17A28000FCAD0 /* IdGenerator.swift */,
-				8FE8666729D41D86000FCAD0 /* Plane.swift */,
+				8F0F013D29D52AF700A0AC1B /* Resources */,
+				8F0F013F29D52B4900A0AC1B /* Sources */,
 			);
 			path = DrawingApp;
 			sourceTree = "<group>";
@@ -229,6 +285,7 @@
 				8FE865FE29D168E4000FCAD0 /* ViewController.swift in Sources */,
 				8FE8661129D1714C000FCAD0 /* ShapeFactory.swift in Sources */,
 				8FE865FA29D168E4000FCAD0 /* AppDelegate.swift in Sources */,
+				8F0F014529D52D2600A0AC1B /* Shape.swift in Sources */,
 				8FE865FC29D168E4000FCAD0 /* SceneDelegate.swift in Sources */,
 				8FE8666429D4011B000FCAD0 /* Point.swift in Sources */,
 				8FE8662129D17A28000FCAD0 /* IdGenerator.swift in Sources */,
@@ -240,8 +297,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0F014729D52F1D00A0AC1B /* Size.swift in Sources */,
 				8FE8661929D17782000FCAD0 /* DrawingAppTests.swift in Sources */,
+				8F0F014829D52F2700A0AC1B /* Plane.swift in Sources */,
+				8F0F014A29D52F4D00A0AC1B /* Shape.swift in Sources */,
+				8F0F014929D52F2A00A0AC1B /* Rectangle.swift in Sources */,
 				8FE8662229D17A28000FCAD0 /* IdGenerator.swift in Sources */,
+				8F0F014629D52F0F00A0AC1B /* Point.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +459,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "DrawingApp/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "DrawingApp/Sources/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -427,7 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "DrawingApp/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "DrawingApp/Sources/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

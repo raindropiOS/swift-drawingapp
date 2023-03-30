@@ -29,8 +29,3 @@ class ShapeFactory {
 enum SquareKind {
     case random
 }
-
-protocol Shape {
-    var point: Point { get }
-    var size: Size { get }
-}
