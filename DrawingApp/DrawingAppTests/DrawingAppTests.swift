@@ -30,4 +30,15 @@ final class DrawingAppTests: XCTestCase {
         print("newId : \(newId)")
         XCTAssertEqual(newId.value.count, 11)
     }
+    
+    func test_Plane의_checkIfThereIsRectangle메소드테스트_선택한point가_rectangle에포함되어_true와_해당하는rectangle을_포함하는튜플을리턴() {
+        var plane = Plane()
+        let rectangle = Rectangle(id: Id(value: "1"), point: Point(x: 50, y: 50), size: Size(width: 100, height: 100), bgColor: (100, 150, 200), alpha: 5)
+        let touchedPoint = Point(x: 75, y: 75)
+        plane.addShape(rectangle)
+        
+        let result = plane.checkIfThereIsRectangle(at: touchedPoint)
+        XCTAssertTrue(result.0)
+        XCTAssertTrue(result.1 === rectangle)
+    }
 }
