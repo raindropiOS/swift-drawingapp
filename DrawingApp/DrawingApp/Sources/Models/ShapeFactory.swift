@@ -17,9 +17,9 @@ class ShapeFactory {
     
     static func returnRandomSquare(point: Point, size: Size) -> Rectangle? {
         guard let id = IdGenerator.generateId(length: 9, separateAt: 4) else { return nil }
-        let r = Float.random(in: 0...255)
-        let g = Float.random(in: 0...255)
-        let b = Float.random(in: 0...255)
+        let r = Float.random(in: 0...255)/255
+        let g = Float.random(in: 0...255)/255
+        let b = Float.random(in: 0...255)/255
         let alpha = Int.random(in: 1...10)
         
         return Rectangle(id: id, point: point, size: size, bgColor: Color(r: r, g: g, b: b), alpha: alpha)
