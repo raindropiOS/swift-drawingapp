@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func rectangleButtonPressed(_ sender: Any) {
-        drawRandomRectangle()
+        drawRandomRectangle(size: Size(width: 150, height: 120))
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +71,7 @@ class ViewController: UIViewController {
         self.view.addSubview(uiView)
     }
     
-    func drawRandomRectangle() {
-        let size = Size(width: 150, height: 120)
+    func drawRandomRectangle(size: Size) {
         let randomPoint = generateRandomPoint(basedOn: size)
         
         if let randomRectangle = ShapeFactory.makeShape(point: randomPoint, size: size, kind: .random) as? Rectangle {
