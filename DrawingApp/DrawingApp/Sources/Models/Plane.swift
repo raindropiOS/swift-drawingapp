@@ -33,7 +33,7 @@ struct Plane {
         return foreFrontShapeWhichIncludesPoint
     }
     
-    func doesShapeIncludes(point: Point, shape: Shape) -> Bool {
+    private func doesShapeIncludes(point: Point, shape: Shape) -> Bool {
         let xBoundary = shape.point.x...shape.point.x + shape.size.width
         let yBoundary = shape.point.y...shape.point.y + shape.size.height
         
