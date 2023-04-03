@@ -105,6 +105,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="canvasView" destination="n8v-ZR-AiM" id="44Z-O3-HLn"/>
                         <outlet property="tapGestureRecognizer" destination="FK7-ne-XIU" id="kNu-No-V2y"/>
                     </connections>
                 </viewController>

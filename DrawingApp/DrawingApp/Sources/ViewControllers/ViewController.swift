@@ -10,6 +10,7 @@ import OSLog
 
 class ViewController: UIViewController {
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+    @IBOutlet weak var canvasView: UIView!
     var selectedUIView: UIView?
     var plane = Plane()
     
