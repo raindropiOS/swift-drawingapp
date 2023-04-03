@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F055F2129DABDFA0091F313 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F055F2029DABDFA0091F313 /* RectangleView.swift */; };
+		8F055F2329DABEE90091F313 /* HaveId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F055F2229DABEE90091F313 /* HaveId.swift */; };
 		8F0F014529D52D2600A0AC1B /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F014429D52D2600A0AC1B /* Shape.swift */; };
 		8F0F014629D52F0F00A0AC1B /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8666329D4011B000FCAD0 /* Point.swift */; };
 		8F0F014729D52F1D00A0AC1B /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8666529D4015B000FCAD0 /* Size.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F055F2029DABDFA0091F313 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
+		8F055F2229DABEE90091F313 /* HaveId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveId.swift; sourceTree = "<group>"; };
 		8F0F014429D52D2600A0AC1B /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		8F8F764729D570FE00D96D2E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		8FE865F629D168E4000FCAD0 /* DrawingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F055F1F29DABDD00091F313 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8F055F2029DABDFA0091F313 /* RectangleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8F0F013D29D52AF700A0AC1B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +113,11 @@
 		8F0F013F29D52B4900A0AC1B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8F0F014029D52B6200A0AC1B /* Models */,
 				8F0F014129D52B7300A0AC1B /* Protocols */,
 				8FE8660F29D16BA7000FCAD0 /* Supporting Files */,
-				8F0F014029D52B6200A0AC1B /* Models */,
 				8F0F014229D52B9500A0AC1B /* ViewControllers */,
+				8F055F1F29DABDD00091F313 /* Views */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -127,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				8F0F014429D52D2600A0AC1B /* Shape.swift */,
+				8F055F2229DABEE90091F313 /* HaveId.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -286,11 +300,13 @@
 			files = (
 				8FE8666629D4015B000FCAD0 /* Size.swift in Sources */,
 				8FE8666829D41D86000FCAD0 /* Plane.swift in Sources */,
+				8F055F2129DABDFA0091F313 /* RectangleView.swift in Sources */,
 				8F8F764829D570FE00D96D2E /* Color.swift in Sources */,
 				8FE865FE29D168E4000FCAD0 /* ViewController.swift in Sources */,
 				8FE8661129D1714C000FCAD0 /* ShapeFactory.swift in Sources */,
 				8FE865FA29D168E4000FCAD0 /* AppDelegate.swift in Sources */,
 				8F0F014529D52D2600A0AC1B /* Shape.swift in Sources */,
+				8F055F2329DABEE90091F313 /* HaveId.swift in Sources */,
 				8FE865FC29D168E4000FCAD0 /* SceneDelegate.swift in Sources */,
 				8FE8666429D4011B000FCAD0 /* Point.swift in Sources */,
 				8FE8662129D17A28000FCAD0 /* IdGenerator.swift in Sources */,

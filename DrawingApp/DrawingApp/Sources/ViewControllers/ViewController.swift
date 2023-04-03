@@ -9,25 +9,51 @@ import UIKit
 import OSLog
 
 class ViewController: UIViewController {
-    
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+    var selectedUIView: UIView?
+    var plane = Plane()
+    
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
-        let point = tapGestureRecognizer.location(in: self.view)
+        let cgPoint = tapGestureRecognizer.location(in: self.view)
+        let point = returnPointFrom(cgpoint: cgPoint)
+        let tappedShape: Shape? = plane.returnForefrontShape(at: point)
+        
+        if tappedShape != nil {
+            let rectangle = tappedShape as! Rectangle
+            
+            selectedUIView?.layer.borderWidth = 0.0
+            selectedUIView = findSubview(withId: rectangle.id)
+            selectedUIView?.layer.borderWidth = 3.0
+            selectedUIView?.layer.borderColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
+        } else {
+            selectedUIView?.layer.borderWidth = 0.0
+            selectedUIView = nil
+        }
     }
     
     @IBAction func rectangleButtonPressed(_ sender: Any) {
         drawRandomRectangle(size: Size(width: 150, height: 120))
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Logger로 출력만 하고 뷰에 그리진 않음
         addRandomRectangles(count: 4, size: Size(width: 150, height: 120))
-        let width = self.view.frame.width
-        let height = self.view.frame.height
-        let boundWidth = self.view.bounds.width
-        let boundHeight = self.view.bounds.height
-        print("")
     }
     
+    func findSubview(withId id: Id) -> UIView? {
+        for subview in self.view.subviews {
+            if subview is HaveId {
+                let selected = subview as! RectangleView
+                if selected.id.value == id.value {
+                    return selected
+                }
+            }
+        }
+        return nil
+    }
+    
+    // Logger출력용
     func addRandomRectangles(count: Int, size: Size) {
         guard count > 0 else { return }
         let customLogger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
@@ -35,7 +61,7 @@ class ViewController: UIViewController {
         for num in 1...count {
             let name = "Rect\(num)"
             let xBoundary = 0...self.view.frame.size.width - size.width
-//            let yBoundary = 0...self.view.frame.size.height - size.height
+            //            let yBoundary = 0...self.view.frame.size.height - size.height
             let yBoundary = size.height...self.view.frame.size.height
             let x = Double.random(in: xBoundary)
             let y = Double.random(in: yBoundary)
@@ -51,10 +77,10 @@ class ViewController: UIViewController {
     }
     
     func generateRandomPoint(basedOn size: Size) -> Point {
-//        let xBoundary = 0...self.view.frame.size.width - size.width
+        //        let xBoundary = 0...self.view.frame.size.width - size.width
         let xBoundary = 0...self.view.frame.width - size.width
-//            let yBoundary = 0...self.view.frame.size.height - size.height
-//        let yBoundary = size.height...self.view.frame.size.height
+        //            let yBoundary = 0...self.view.frame.size.height - size.height
+        //        let yBoundary = size.height...self.view.frame.size.height
         let yBoundary = size.height...self.view.frame.height
         let x = Double.random(in: xBoundary)
         let y = Double.random(in: yBoundary)
@@ -62,20 +88,25 @@ class ViewController: UIViewController {
         return Point(x: x, y: y)
     }
     
-    func draw(rectangle: Rectangle) {
+    func returnRectangleViewFrom(rectangle: Rectangle) -> UIView {
         let cgRect = returnCGRectFrom(point: rectangle.point, size: rectangle.size)
         let uiColor = returnUIColorFrom(color: rectangle.backgroundColor, alpha: rectangle.alpha)
-        let uiView = UIView(frame: cgRect)
+        let uiView = RectangleView(frame: cgRect, id: rectangle.id)
         
         uiView.backgroundColor = uiColor
-        self.view.addSubview(uiView)
+        
+        plane.addShape(rectangle)
+        return uiView
     }
+    
+    //    func generateUIViewFrom(rectangle: Rectangle)
     
     func drawRandomRectangle(size: Size) {
         let randomPoint = generateRandomPoint(basedOn: size)
         
         if let randomRectangle = ShapeFactory.makeShape(point: randomPoint, size: size, kind: .random) as? Rectangle {
-            draw(rectangle: randomRectangle)
+            let uiView = returnRectangleViewFrom(rectangle: randomRectangle)
+            self.view.addSubview(uiView)
         } else {
             
         }
@@ -87,6 +118,13 @@ class ViewController: UIViewController {
     
     func returnUIColorFrom(color: Color, alpha: Int) -> UIColor {
         UIColor(red: CGFloat(color.r), green: CGFloat(color.g), blue: CGFloat(color.b), alpha: CGFloat(alpha))
+    }
+    
+    func returnPointFrom(cgpoint: CGPoint) -> Point {
+        let x = Double(cgpoint.x)
+        let y = Double(cgpoint.y)
+        
+        return Point(x: x, y: y)
     }
 }
 

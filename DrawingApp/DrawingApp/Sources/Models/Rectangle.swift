@@ -8,7 +8,7 @@
 import Foundation
 
 class Rectangle: Shape {
-    private let id: Id
+    let id: Id
     let point: Point
     let size: Size
     let backgroundColor: Color
