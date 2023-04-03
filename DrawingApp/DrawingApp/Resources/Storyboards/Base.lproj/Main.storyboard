@@ -62,31 +62,43 @@
                                     <constraint firstItem="42Q-DK-jW7" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Igg-HF-unD" secondAttribute="leading" constant="18" id="u4h-f6-45u"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFq-Nu-6DW">
-                                <rect key="frame" x="583" y="854" width="200" height="150"/>
-                                <color key="backgroundColor" red="0.96470588450000005" green="0.96470588450000005" blue="0.99607843159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8v-ZR-AiM">
+                                <rect key="frame" x="0.0" y="20" width="1126" height="1004"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFq-Nu-6DW">
+                                        <rect key="frame" x="463" y="854" width="200" height="150"/>
+                                        <color key="backgroundColor" red="0.96470588450000005" green="0.96470588450000005" blue="0.99607843159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="XFq-Nu-6DW" secondAttribute="height" multiplier="4:3" id="Yux-9x-qC0"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="bWc-VE-S3Z"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="사각형">
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="rectangleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5x9-tJ-AKa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="XFq-Nu-6DW" secondAttribute="height" multiplier="4:3" id="Yux-9x-qC0"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="bWc-VE-S3Z"/>
+                                    <constraint firstItem="XFq-Nu-6DW" firstAttribute="centerX" secondItem="n8v-ZR-AiM" secondAttribute="centerX" id="JJZ-LK-rG4"/>
+                                    <constraint firstAttribute="bottom" secondItem="XFq-Nu-6DW" secondAttribute="bottom" id="Rl9-Aa-Xah"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="사각형">
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="rectangleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5x9-tJ-AKa"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Igg-HF-unD" secondAttribute="bottom" constant="20" id="HOx-1X-1Yd"/>
+                            <constraint firstItem="Igg-HF-unD" firstAttribute="leading" secondItem="n8v-ZR-AiM" secondAttribute="trailing" id="SLB-yU-MF6"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="n8v-ZR-AiM" secondAttribute="bottom" id="cm3-vV-lng"/>
+                            <constraint firstItem="n8v-ZR-AiM" firstAttribute="top" secondItem="Igg-HF-unD" secondAttribute="top" id="eUr-J8-MOM"/>
                             <constraint firstItem="Igg-HF-unD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fUH-nT-RUw"/>
                             <constraint firstItem="Igg-HF-unD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hnl-pG-1wt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XFq-Nu-6DW" secondAttribute="bottom" constant="20" id="pi1-Gs-pXh"/>
-                            <constraint firstItem="XFq-Nu-6DW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zga-w7-R3E"/>
+                            <constraint firstItem="n8v-ZR-AiM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lqV-Oz-ywz"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="FK7-ne-XIU" appends="YES" id="Smp-Gd-I5X"/>
