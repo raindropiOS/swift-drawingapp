@@ -61,9 +61,8 @@ class ViewController: UIViewController {
         
         for num in 1...count {
             let name = "Rect\(num)"
-            let xBoundary = 0...self.view.frame.size.width - size.width
-            //            let yBoundary = 0...self.view.frame.size.height - size.height
-            let yBoundary = size.height...self.view.frame.size.height
+            let xBoundary = 0...self.canvasView.frame.size.width - size.width
+            let yBoundary = size.height...self.canvasView.frame.size.height
             let x = Double.random(in: xBoundary)
             let y = Double.random(in: yBoundary)
             let point = Point(x: x, y: y)
@@ -78,11 +77,8 @@ class ViewController: UIViewController {
     }
     
     func generateRandomPoint(basedOn size: Size) -> Point {
-        //        let xBoundary = 0...self.view.frame.size.width - size.width
-        let xBoundary = 0...self.view.frame.width - size.width
-        //            let yBoundary = 0...self.view.frame.size.height - size.height
-        //        let yBoundary = size.height...self.view.frame.size.height
-        let yBoundary = size.height...self.view.frame.height
+        let xBoundary = 0...self.canvasView.frame.width - size.width
+        let yBoundary = size.height...self.canvasView.frame.height
         let x = Double.random(in: xBoundary)
         let y = Double.random(in: yBoundary)
         
@@ -99,8 +95,6 @@ class ViewController: UIViewController {
         plane.addShape(rectangle)
         return uiView
     }
-    
-    //    func generateUIViewFrom(rectangle: Rectangle)
     
     func drawRandomRectangle(size: Size) {
         let randomPoint = generateRandomPoint(basedOn: size)
