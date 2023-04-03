@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Alpha: Double {
+enum Alpha: Double, CaseIterable {
     case one = 0.1
     case two = 0.2
     case three = 0.3

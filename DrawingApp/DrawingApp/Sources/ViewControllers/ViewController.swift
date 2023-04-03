@@ -117,8 +117,8 @@ class ViewController: UIViewController {
         CGRect(x: Int(point.x), y: Int(point.y), width: Int(size.width), height: Int(size.height))
     }
     
-    func returnUIColorFrom(color: Color, alpha: Int) -> UIColor {
-        UIColor(red: CGFloat(color.r), green: CGFloat(color.g), blue: CGFloat(color.b), alpha: CGFloat(alpha))
+    func returnUIColorFrom(color: Color, alpha: Alpha) -> UIColor {
+        UIColor(red: CGFloat(color.r), green: CGFloat(color.g), blue: CGFloat(color.b), alpha: CGFloat(alpha.rawValue))
     }
     
     func returnPointFrom(cgpoint: CGPoint) -> Point {

@@ -20,7 +20,7 @@ class ShapeFactory {
         let r = Float.random(in: 0...255)/255
         let g = Float.random(in: 0...255)/255
         let b = Float.random(in: 0...255)/255
-        let alpha = Int.random(in: 1...10)
+        let alpha = Alpha.allCases.randomElement() ?? .ten
         
         return Rectangle(id: id, point: point, size: size, bgColor: Color(r: r, g: g, b: b), alpha: alpha)
     }

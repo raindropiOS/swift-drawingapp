@@ -12,9 +12,9 @@ class Rectangle: Shape {
     let point: Point
     let size: Size
     let backgroundColor: Color
-    let alpha: Int
+    let alpha: Alpha
     
-    init(id: Id, point: Point, size: Size, bgColor: Color, alpha: Int) {
+    init(id: Id, point: Point, size: Size, bgColor: Color, alpha: Alpha) {
         self.id = id
         self.point = point
         self.size = size
