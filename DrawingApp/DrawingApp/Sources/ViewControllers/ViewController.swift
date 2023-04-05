@@ -11,22 +11,22 @@ import OSLog
 class ViewController: UIViewController {
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var canvasView: UIView!
-    var selectedUIView: UIView?
+    var selectedShapeView: ShapeView?
     var plane = Plane()
     
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
-        let cgPoint = tapGestureRecognizer.location(in: self.view)
-        let point = returnPointFrom(cgpoint: cgPoint)
+        let cgPoint: CGPoint = tapGestureRecognizer.location(in: self.view)
+        let point: Point = returnPointFrom(cgpoint: cgPoint)
         let tappedShape: Shape? = plane.returnForefrontShape(at: point)
         
         if let shape = tappedShape {
-            selectedUIView?.layer.borderWidth = 0.0
-            selectedUIView = findSubview(withId: shape.id)
-            selectedUIView?.layer.borderWidth = 3.0
-            selectedUIView?.layer.borderColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
+            selectedShapeView?.layer.borderWidth = 0.0
+            selectedShapeView = findShapeView(with: shape.id)
+            selectedShapeView?.layer.borderWidth = 3.0
+            selectedShapeView?.layer.borderColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
         } else {
-            selectedUIView?.layer.borderWidth = 0.0
-            selectedUIView = nil
+            selectedShapeView?.layer.borderWidth = 0.0
+            selectedShapeView = nil
         }
     }
     
@@ -40,13 +40,11 @@ class ViewController: UIViewController {
         addRandomRectangles(count: 4, size: Size(width: 150, height: 120))
     }
     
-    func findSubview(withId id: Id) -> UIView? {
+    func findShapeView(with id: Id) -> ShapeView? {
         for subview in self.view.subviews {
-            if subview is HaveId {
-                //TODO: as! 지우기
-                let selected = subview as! RectangleView
-                if selected.id.value == id.value {
-                    return selected
+            if let selectedView = subview as? ShapeView {
+                if selectedView.id.value == id.value {
+                    return selectedView
                 }
             }
         }
@@ -90,7 +88,6 @@ class ViewController: UIViewController {
         let uiView = RectangleView(frame: cgRect, id: shape.id)
         
         uiView.backgroundColor = uiColor
-        
         plane.addShape(shape)
         return uiView
     }
@@ -102,7 +99,7 @@ class ViewController: UIViewController {
             let uiView = returnRectangleViewFrom(shape: randomRectangle)
             self.view.addSubview(uiView)
         } else {
-            
+            //TODO: 불필요한 else문 삭제
         }
     }
     
