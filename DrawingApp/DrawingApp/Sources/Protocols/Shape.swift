@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Shape {
+protocol Shape: Colorable, HaveId, CustomStringConvertible {
     var point: Point { get }
     var size: Size { get }
 }
