@@ -66,7 +66,7 @@ class ViewController: UIViewController {
             let x = Double.random(in: xBoundary)
             let y = Double.random(in: yBoundary)
             let point = Point(x: x, y: y)
-            if let randomSquare = ShapeFactory.makeShape(point: point, size: size, kind: .random) as? Rectangle {
+            if let randomSquare = ShapeFactory.makeShape(point: point, size: size, kind: .randomRectangle) as? Rectangle {
                 // TODO: 뷰에 추가하기
                 customLogger.log("\(name) \(randomSquare.description)")
             }
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
     func drawRandomRectangle(size: Size) {
         let randomPoint = generateRandomPoint(basedOn: size)
         
-        if let randomRectangle = ShapeFactory.makeShape(point: randomPoint, size: size, kind: .random) as? Rectangle {
+        if let randomRectangle = ShapeFactory.makeShape(point: randomPoint, size: size, kind: .randomRectangle) as? Rectangle {
             let uiView = returnRectangleViewFrom(rectangle: randomRectangle)
             self.view.addSubview(uiView)
         } else {

@@ -10,7 +10,7 @@ import Foundation
 class ShapeFactory {
     static func makeShape(point: Point, size: Size, kind: SquareKind) -> Shape? {
         switch kind {
-        case .random:
+        case .randomRectangle:
             return returnRandomSquare(point: point, size: size)
         }
     }
@@ -27,5 +27,5 @@ class ShapeFactory {
 }
 
 enum SquareKind {
-    case random
+    case randomRectangle
 }
