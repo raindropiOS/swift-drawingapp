@@ -25,6 +25,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="CNB-Ai-ir4"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="alphaSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="W10-vI-db7"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배경색" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2R-sQ-uav">
                                         <rect key="frame" x="18" y="53" width="204" height="34"/>
@@ -112,7 +115,7 @@
                     </view>
                     <connections>
                         <outlet property="RectangleColorControl" destination="Igg-HF-unD" id="yFe-TT-81H"/>
-                        <outlet property="alphaSlider" destination="WcK-m2-PQL" id="n5R-gZ-LMX"/>
+                        <outlet property="alphaSlider" destination="WcK-m2-PQL" id="KId-0b-pV3"/>
                         <outlet property="backgroundColorChangeButton" destination="iDp-Ch-bOh" id="JuU-Yt-zXs"/>
                         <outlet property="canvasView" destination="n8v-ZR-AiM" id="44Z-O3-HLn"/>
                         <outlet property="tapGestureRecognizer" destination="FK7-ne-XIU" id="kNu-No-V2y"/>

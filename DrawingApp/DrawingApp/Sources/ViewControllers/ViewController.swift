@@ -27,11 +27,14 @@ class ViewController: UIViewController {
         
         if let shape = tappedShape {
             // Shape이 존재하는 곳을 탭했을 때
+            // 이전에 선택된 shape 처리
             selectedShapeView?.layer.borderWidth = 0.0
+            // 새롭게 선택된 shape 처리
             selectedShapeView = findShapeView(with: shape.id)
             selectedShapeView?.layer.borderWidth = 3.0
             selectedShapeView?.layer.borderColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
             backgroundColorChangeButton.setTitle(selectedShapeView?.backgroundColor?.toHexString(), for: .normal)
+//            alphaSlider.value = Float(selectedShapeView?.alpha)
         } else {
             selectedShapeView?.layer.borderWidth = 0.0
             selectedShapeView = nil
@@ -39,6 +42,9 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func alphaSliderValueChanged(_ sender: Any) {
+        
+    }
     @IBAction func rectangleButtonPressed(_ sender: Any) {
         drawRandomRectangle(size: Size(width: 150, height: 120))
     }
