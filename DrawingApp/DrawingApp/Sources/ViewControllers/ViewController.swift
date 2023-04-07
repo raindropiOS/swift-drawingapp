@@ -11,8 +11,9 @@ import OSLog
 class ViewController: UIViewController {
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var canvasView: UIView!
-    
     @IBOutlet weak var alphaSlider: UISlider!
+    @IBOutlet weak var backgroundColorChangeButton: UIButton!
+    @IBOutlet weak var RectangleColorControl: UIView!
     var selectedShapeView: ShapeView?
     var plane = Plane()
     
@@ -25,14 +26,16 @@ class ViewController: UIViewController {
         let tappedShape: Shape? = plane.returnForefrontShape(at: point)
         
         if let shape = tappedShape {
+            // Shape이 존재하는 곳을 탭했을 때
             selectedShapeView?.layer.borderWidth = 0.0
             selectedShapeView = findShapeView(with: shape.id)
             selectedShapeView?.layer.borderWidth = 3.0
             selectedShapeView?.layer.borderColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
-            
+            backgroundColorChangeButton.setTitle(selectedShapeView?.backgroundColor?.toHexString(), for: .normal)
         } else {
             selectedShapeView?.layer.borderWidth = 0.0
             selectedShapeView = nil
+            backgroundColorChangeButton.setTitle("선택된 도형이 없습니다.", for: .normal)
         }
     }
     
