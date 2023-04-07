@@ -11,11 +11,14 @@ import OSLog
 class ViewController: UIViewController {
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var canvasView: UIView!
-    @IBOutlet weak var backgroundLabel: UILabel!
+    
     @IBOutlet weak var alphaSlider: UISlider!
     var selectedShapeView: ShapeView?
     var plane = Plane()
     
+    @IBAction func backgroundColorButtonPressed(_ sender: Any) {
+        
+    }
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
         let cgPoint: CGPoint = tapGestureRecognizer.location(in: self.view)
         let point: Point = returnPointFrom(cgpoint: cgPoint)
@@ -26,12 +29,11 @@ class ViewController: UIViewController {
             selectedShapeView = findShapeView(with: shape.id)
             selectedShapeView?.layer.borderWidth = 3.0
             selectedShapeView?.layer.borderColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
-            backgroundLabel.text = selectedShapeView?.backgroundColor?.toHexString()
+            
         } else {
             selectedShapeView?.layer.borderWidth = 0.0
             selectedShapeView = nil
         }
-        print("")
     }
     
     @IBAction func rectangleButtonPressed(_ sender: Any) {

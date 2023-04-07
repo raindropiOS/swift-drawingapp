@@ -44,22 +44,33 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDp-Ch-bOh">
+                                        <rect key="frame" x="30" y="110" width="180" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="선택된 도형이 없습니다"/>
+                                        <connections>
+                                            <action selector="backgroundColorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="unN-2v-Gfn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254908080000002" green="0.97254908080000002" blue="0.99607843159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iDp-Ch-bOh" secondAttribute="trailing" constant="30" id="1h9-OE-3JJ"/>
                                     <constraint firstAttribute="width" constant="240" id="5ss-Na-2z3"/>
-                                    <constraint firstItem="42Q-DK-jW7" firstAttribute="top" secondItem="KRJ-Hs-raI" secondAttribute="bottom" constant="34" id="9RH-oq-Y0E"/>
-                                    <constraint firstItem="KRJ-Hs-raI" firstAttribute="centerX" secondItem="Igg-HF-unD" secondAttribute="centerX" id="CS8-lK-3H2"/>
-                                    <constraint firstAttribute="trailing" secondItem="WcK-m2-PQL" secondAttribute="trailing" constant="8" id="Geu-XY-aI8"/>
+                                    <constraint firstItem="iDp-Ch-bOh" firstAttribute="top" secondItem="Y2R-sQ-uav" secondAttribute="bottom" constant="23" id="6vc-Nx-oAk"/>
+                                    <constraint firstItem="WcK-m2-PQL" firstAttribute="leading" secondItem="Igg-HF-unD" secondAttribute="leading" constant="18" id="FNs-CI-vde"/>
+                                    <constraint firstAttribute="trailing" secondItem="WcK-m2-PQL" secondAttribute="trailing" constant="18" id="Geu-XY-aI8"/>
                                     <constraint firstItem="WcK-m2-PQL" firstAttribute="top" secondItem="42Q-DK-jW7" secondAttribute="bottom" constant="8" id="KAF-6o-SgN"/>
                                     <constraint firstItem="KRJ-Hs-raI" firstAttribute="top" secondItem="Y2R-sQ-uav" secondAttribute="bottom" constant="29" id="QcG-qR-9fO"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="42Q-DK-jW7" secondAttribute="trailing" constant="18" id="SRs-ya-t9C"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Y2R-sQ-uav" secondAttribute="trailing" constant="18" id="W7Y-jJ-ZdS"/>
-                                    <constraint firstItem="Y2R-sQ-uav" firstAttribute="leading" secondItem="42Q-DK-jW7" secondAttribute="leading" id="czA-l4-ybM"/>
                                     <constraint firstItem="Y2R-sQ-uav" firstAttribute="top" secondItem="Igg-HF-unD" secondAttribute="top" constant="53" id="ieS-Lc-H01"/>
+                                    <constraint firstItem="42Q-DK-jW7" firstAttribute="top" secondItem="iDp-Ch-bOh" secondAttribute="bottom" constant="27" id="jNb-vs-gqO"/>
                                     <constraint firstItem="Y2R-sQ-uav" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Igg-HF-unD" secondAttribute="leading" constant="18" id="k6T-Wo-BtX"/>
                                     <constraint firstItem="42Q-DK-jW7" firstAttribute="leading" secondItem="WcK-m2-PQL" secondAttribute="leading" id="oC3-87-7aS"/>
                                     <constraint firstItem="42Q-DK-jW7" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Igg-HF-unD" secondAttribute="leading" constant="18" id="u4h-f6-45u"/>
+                                    <constraint firstItem="iDp-Ch-bOh" firstAttribute="centerX" secondItem="WcK-m2-PQL" secondAttribute="centerX" id="y6R-cJ-6fH"/>
+                                    <constraint firstItem="iDp-Ch-bOh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Igg-HF-unD" secondAttribute="leading" constant="30" id="zgj-nu-1Wk"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8v-ZR-AiM">
@@ -106,7 +117,6 @@
                     </view>
                     <connections>
                         <outlet property="alphaSlider" destination="WcK-m2-PQL" id="n5R-gZ-LMX"/>
-                        <outlet property="backgroundLabel" destination="KRJ-Hs-raI" id="KNC-HC-Cex"/>
                         <outlet property="canvasView" destination="n8v-ZR-AiM" id="44Z-O3-HLn"/>
                         <outlet property="tapGestureRecognizer" destination="FK7-ne-XIU" id="kNu-No-V2y"/>
                     </connections>
