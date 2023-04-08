@@ -33,7 +33,7 @@ final class DrawingAppTests: XCTestCase {
     
     func test_Plane의returnForefrontShape메소드_Shape범위에해당하는Point를전달했을때_해당하는Shape를리턴() {
         var plane = Plane()
-        let rectangle = Rectangle(id: Id(value: "1"), point: Point(x: 50, y: 50), size: Size(width: 100, height: 100), bgColor: Color(r: 100, g: 150, b: 200), alpha: .five)
+        let rectangle = Rectangle(id: Id(value: "1"), origin: Point(x: 50, y: 50), size: Size(width: 100, height: 100), bgColor: Color(r: 100, g: 150, b: 200), alpha: .five)
         let touchedPoint = Point(x: 75, y: 75)
         plane.addShape(rectangle)
         let result = plane.returnForefrontShape(at: touchedPoint) as! Rectangle

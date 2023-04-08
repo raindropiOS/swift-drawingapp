@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ShapeProducible {
-    func makeShape(point: Point, size: Size, kind: ShapeKind) -> Shape?
-    func returnRandomSquare(point: Point, size: Size) -> Rectangle?
+    func makeShape(origin: Point, size: Size, kind: ShapeKind) -> Shape?
+    func returnRandomSquare(origin: Point, size: Size) -> Rectangle?
 }

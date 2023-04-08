@@ -54,8 +54,8 @@ struct Plane {
     }
     
     private func doesShapeIncludes(point: Point, shape: Shape) -> Bool {
-        let xBoundary = shape.point.x...shape.point.x + shape.size.width
-        let yBoundary = shape.point.y...shape.point.y + shape.size.height
+        let xBoundary = shape.origin.x...shape.origin.x + shape.size.width
+        let yBoundary = shape.origin.y...shape.origin.y + shape.size.height
         
         return xBoundary.contains(point.x) && yBoundary.contains(point.y)
     }

@@ -9,14 +9,14 @@ import Foundation
 
 class Rectangle: Shape {
     let id: Id
-    let point: Point
+    let origin: Point
     let size: Size
     private(set) var backgroundColor: Color
     private(set) var alpha: Alpha
     
-    init(id: Id, point: Point, size: Size, bgColor: Color, alpha: Alpha) {
+    init(id: Id, origin: Point, size: Size, bgColor: Color, alpha: Alpha) {
         self.id = id
-        self.point = point
+        self.origin = origin
         self.size = size
         self.backgroundColor = bgColor
         self.alpha = alpha
@@ -33,6 +33,6 @@ class Rectangle: Shape {
 
 extension Rectangle: CustomStringConvertible {
     var description: String {
-        "(\(id.value)), X:\(point.x), Y:\(point.y), W\(size.width), H\(size.height), R:\(backgroundColor.r), G:\(backgroundColor.g), B:\(backgroundColor.b)"
+        "(\(id.value)), X:\(origin.x), Y:\(origin.y), W\(size.width), H\(size.height), R:\(backgroundColor.r), G:\(backgroundColor.g), B:\(backgroundColor.b)"
     }
 }

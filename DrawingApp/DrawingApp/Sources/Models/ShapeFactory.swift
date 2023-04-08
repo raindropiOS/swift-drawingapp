@@ -14,19 +14,19 @@ class ShapeFactory: ShapeProducible {
         colorFactory = ColorFactory()
     }
     
-    func makeShape(point: Point, size: Size, kind: ShapeKind) -> Shape? {
+    func makeShape(origin: Point, size: Size, kind: ShapeKind) -> Shape? {
         switch kind {
         case .randomRectangle:
-            return returnRandomSquare(point: point, size: size)
+            return returnRandomSquare(origin: origin, size: size)
         }
     }
     
-    func returnRandomSquare(point: Point, size: Size) -> Rectangle? {
+    func returnRandomSquare(origin: Point, size: Size) -> Rectangle? {
         guard let id = IdGenerator.generateId(length: 9, separateAt: 4) else { return nil }
         let randomColor = colorFactory.makeRandomColor()
         let randomAlpha = colorFactory.makeRandomAlpha()
         
-        return Rectangle(id: id, point: point, size: size, bgColor: randomColor, alpha: randomAlpha)
+        return Rectangle(id: id, origin: origin, size: size, bgColor: randomColor, alpha: randomAlpha)
     }
 }
 

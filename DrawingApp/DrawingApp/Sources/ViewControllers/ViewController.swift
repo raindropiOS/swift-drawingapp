@@ -105,7 +105,7 @@ class ViewController: UIViewController {
             let x = Double.random(in: xBoundary)
             let y = Double.random(in: yBoundary)
             let point = Point(x: x, y: y)
-            if let randomSquare = shapeFactory.makeShape(point: point, size: size, kind: .randomRectangle) {
+            if let randomSquare = shapeFactory.makeShape(origin: point, size: size, kind: .randomRectangle) {
                 // TODO: 뷰에 추가하기
                 logger.log("\(name) \(randomSquare.description)")
             }
@@ -125,7 +125,7 @@ class ViewController: UIViewController {
     }
     
     func returnRectangleViewFrom(shape: Shape) -> UIView {
-        let cgRect = returnCGRectFrom(point: shape.point, size: shape.size)
+        let cgRect = returnCGRectFrom(point: shape.origin, size: shape.size)
         let uiColor = returnUIColorFrom(color: shape.backgroundColor, alpha: shape.alpha)
         let uiView = RectangleView(frame: cgRect, id: shape.id)
         
@@ -137,7 +137,7 @@ class ViewController: UIViewController {
     func drawRandomRectangle(size: Size) {
         let randomPoint = generateRandomPoint(basedOn: size)
         
-        if let randomRectangle = shapeFactory.makeShape(point: randomPoint, size: size, kind: .randomRectangle) {
+        if let randomRectangle = shapeFactory.makeShape(origin: randomPoint, size: size, kind: .randomRectangle) {
             let uiView = returnRectangleViewFrom(shape: randomRectangle)
             self.view.addSubview(uiView)
         } else {
