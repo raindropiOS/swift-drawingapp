@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var RectangleColorControl: UIView!
     var selectedShapeView: ShapeView?
     var plane = Plane()
+    let shapeFactory: ShapeProducible = ShapeFactory()
     let colorFactory: ColorAlphaProducible = ColorFactory()
     let logger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
     
@@ -104,7 +105,7 @@ class ViewController: UIViewController {
             let x = Double.random(in: xBoundary)
             let y = Double.random(in: yBoundary)
             let point = Point(x: x, y: y)
-            if let randomSquare = ShapeFactory.makeShape(point: point, size: size, kind: .randomRectangle) {
+            if let randomSquare = shapeFactory.makeShape(point: point, size: size, kind: .randomRectangle) {
                 // TODO: 뷰에 추가하기
                 logger.log("\(name) \(randomSquare.description)")
             }
@@ -136,7 +137,7 @@ class ViewController: UIViewController {
     func drawRandomRectangle(size: Size) {
         let randomPoint = generateRandomPoint(basedOn: size)
         
-        if let randomRectangle = ShapeFactory.makeShape(point: randomPoint, size: size, kind: .randomRectangle) {
+        if let randomRectangle = shapeFactory.makeShape(point: randomPoint, size: size, kind: .randomRectangle) {
             let uiView = returnRectangleViewFrom(shape: randomRectangle)
             self.view.addSubview(uiView)
         } else {

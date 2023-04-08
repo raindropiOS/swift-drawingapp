@@ -41,6 +41,7 @@
 		8FF661AA29E18C93003CBE09 /* ColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF661A929E18C93003CBE09 /* ColorFactory.swift */; };
 		8FF661AC29E18DA9003CBE09 /* RangedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF661AB29E18DA9003CBE09 /* RangedValue.swift */; };
 		8FF661AE29E198F8003CBE09 /* ColorAlphaProducible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF661AD29E198F8003CBE09 /* ColorAlphaProducible.swift */; };
+		8FF661B229E1C8A8003CBE09 /* ShapeProducible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF661B129E1C8A8003CBE09 /* ShapeProducible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		8FF661A929E18C93003CBE09 /* ColorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFactory.swift; sourceTree = "<group>"; };
 		8FF661AB29E18DA9003CBE09 /* RangedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangedValue.swift; sourceTree = "<group>"; };
 		8FF661AD29E198F8003CBE09 /* ColorAlphaProducible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlphaProducible.swift; sourceTree = "<group>"; };
+		8FF661B129E1C8A8003CBE09 /* ShapeProducible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeProducible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				8FA0726729DD092200F4E8A7 /* Colorable.swift */,
 				8FA0726C29DD133D00F4E8A7 /* ShapeView.swift */,
 				8FF661AD29E198F8003CBE09 /* ColorAlphaProducible.swift */,
+				8FF661B129E1C8A8003CBE09 /* ShapeProducible.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FE8666629D4015B000FCAD0 /* Size.swift in Sources */,
+				8FF661B229E1C8A8003CBE09 /* ShapeProducible.swift in Sources */,
 				8FE8666829D41D86000FCAD0 /* Plane.swift in Sources */,
 				8FF661AE29E198F8003CBE09 /* ColorAlphaProducible.swift in Sources */,
 				8F1532E629DB047500AD5C61 /* Alpha.swift in Sources */,
