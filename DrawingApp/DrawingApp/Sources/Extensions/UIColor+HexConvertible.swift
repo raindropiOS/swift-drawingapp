@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 extension UIColor {
     // https://stackoverflow.com/questions/49150872/how-to-convert-rgb-values-to-hex-string-ios-swift
     func toHexString() -> String {
@@ -22,7 +21,17 @@ extension UIColor {
 
             return NSString(format:"#%06x", rgb) as String
         }
+    
+    func getBackgroundColorAlpha() -> CGFloat {
+        var r:CGFloat = 0
+        var g:CGFloat = 0
+        var b:CGFloat = 0
+        var alpha:CGFloat = 0
 
+        getRed(&r, green: &g, blue: &b, alpha: &alpha)
+        return alpha
+    }
+    
     convenience init(hex: String, alpha: Alpha) {
         // #FFFFFF 와 같은 형태를 받는다고 가정
         let strArr = Array(hex)

@@ -30,21 +30,33 @@ class ViewController: UIViewController {
             // 이전에 선택된 shape 처리
             selectedShapeView?.layer.borderWidth = 0.0
             // 새롭게 선택된 shape 처리
-            selectedShapeView = findShapeView(with: shape.id)
-            selectedShapeView?.layer.borderWidth = 3.0
-            selectedShapeView?.layer.borderColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
-            backgroundColorChangeButton.setTitle(selectedShapeView?.backgroundColor?.toHexString(), for: .normal)
-//            alphaSlider.value = Float(selectedShapeView?.alpha)
+            if let newlySelectedShapeView = findShapeView(with: shape.id) {
+                newlySelectedShapeView.layer.borderWidth = 3.0
+                //TODO: alph값 1.0으로 변경하기
+                newlySelectedShapeView.layer.borderColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
+                //TODO: slider 값 설정 부분 수정
+                if let backgroundColor = newlySelectedShapeView.backgroundColor {
+                    alphaSlider.setValue(Float(backgroundColor.getBackgroundColorAlpha()), animated: true)
+                    backgroundColorChangeButton.setTitle(backgroundColor.toHexString(), for: .normal)
+                }
+                selectedShapeView = newlySelectedShapeView
+                    
+            }
         } else {
+            // Shape이 존재하지 않는 곳을 탭했을 때
             selectedShapeView?.layer.borderWidth = 0.0
             selectedShapeView = nil
+            alphaSlider.setValue(0.5, animated: true)
             backgroundColorChangeButton.setTitle("선택된 도형이 없습니다.", for: .normal)
         }
     }
     
     @IBAction func alphaSliderValueChanged(_ sender: Any) {
-        
+        let newAlphaValue = CGFloat(alphaSlider.value)
+        let newAlphaValueColor = selectedShapeView?.backgroundColor?.withAlphaComponent(newAlphaValue)
+        selectedShapeView?.backgroundColor = newAlphaValueColor
     }
+    
     @IBAction func rectangleButtonPressed(_ sender: Any) {
         drawRandomRectangle(size: Size(width: 150, height: 120))
     }
