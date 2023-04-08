@@ -20,6 +20,12 @@ class ViewController: UIViewController {
     let colorFactory: ColorAlphaProducible = ColorFactory()
     let logger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Logger로 출력만 하고 뷰에 그리진 않음
+        addRandomRectangles(count: 4, size: Size(width: 150, height: 120))
+    }
+    
     @IBAction func backgroundColorChangeButtonPressed(_ sender: Any) {
         guard let selectedShapeView = selectedShapeView else {
             logger.log("[backgroundColorChangeButtonPressed] selectedShapeView이 현재 nil이어서 색상을 바꿀 수 없음")
@@ -77,12 +83,6 @@ class ViewController: UIViewController {
         drawRandomRectangle(size: Size(width: 150, height: 120))
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Logger로 출력만 하고 뷰에 그리진 않음
-        addRandomRectangles(count: 4, size: Size(width: 150, height: 120))
-    }
-    
     func findShapeView(with id: Id) -> ShapeView? {
         for subview in self.view.subviews {
             if let selectedView = subview as? ShapeView {
@@ -101,7 +101,7 @@ class ViewController: UIViewController {
         for num in 1...count {
             let name = "Rect\(num)"
             let xBoundary = 0...self.canvasView.frame.size.width - size.width
-            let yBoundary = size.height...self.canvasView.frame.size.height
+            let yBoundary = 0...self.canvasView.frame.size.height - size.height
             let x = Double.random(in: xBoundary)
             let y = Double.random(in: yBoundary)
             let point = Point(x: x, y: y)
@@ -116,8 +116,8 @@ class ViewController: UIViewController {
     }
     
     func generateRandomPoint(basedOn size: Size) -> Point {
-        let xBoundary = 0...self.canvasView.frame.width - size.width
-        let yBoundary = size.height...self.canvasView.frame.height
+        let xBoundary = 0...self.canvasView.frame.size.width - size.width
+        let yBoundary = 0...self.canvasView.frame.size.height - size.height
         let x = Double.random(in: xBoundary)
         let y = Double.random(in: yBoundary)
         
