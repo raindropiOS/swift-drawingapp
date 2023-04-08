@@ -14,7 +14,7 @@ class ShapeFactory: ShapeProducible {
         colorFactory = ColorFactory()
     }
     
-    func makeShape(point: Point, size: Size, kind: SquareKind) -> Shape? {
+    func makeShape(point: Point, size: Size, kind: ShapeKind) -> Shape? {
         switch kind {
         case .randomRectangle:
             return returnRandomSquare(point: point, size: size)
@@ -30,6 +30,6 @@ class ShapeFactory: ShapeProducible {
     }
 }
 
-enum SquareKind {
+enum ShapeKind {
     case randomRectangle
 }
