@@ -16,10 +16,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var RectangleColorControl: UIView!
     var selectedShapeView: ShapeView?
     var plane = Plane()
+    let colorFactory: ColorAlphaProducible = ColorFactory()
+    let logger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
     
-    @IBAction func backgroundColorButtonPressed(_ sender: Any) {
+    @IBAction func backgroundColorChangeButtonPressed(_ sender: Any) {
+        guard let selectedShapeView = selectedShapeView else {
+            logger.log("[backgroundColorChangeButtonPressed] selectedShapeView이 현재 nil이어서 색상을 바꿀 수 없음")
+            return
+        }
+        let id: Id = selectedShapeView.id
+        let newColor: Color = colorFactory.makeRandomColor()
+        let newAlpha: Alpha = colorFactory.makeRandomAlpha()
+        let newUiColor: UIColor = returnUIColorFrom(color: newColor, alpha: newAlpha)
         
+        plane.setComponentAlphaWith(newAlpha, id: id)
+        plane.setComponentColorWith(newColor, id: id)
+        setBackgroundColorOf(selectedShapeView, with: newUiColor)
+        backgroundColorChangeButton.setTitle("\(newUiColor.toHexString())", for: .normal)
     }
+    
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
         let cgPoint: CGPoint = tapGestureRecognizer.location(in: self.view)
         let point: Point = returnPointFrom(cgpoint: cgPoint)
@@ -81,7 +96,6 @@ class ViewController: UIViewController {
     // Logger출력용
     func addRandomRectangles(count: Int, size: Size) {
         guard count > 0 else { return }
-        let customLogger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
         
         for num in 1...count {
             let name = "Rect\(num)"
@@ -92,10 +106,10 @@ class ViewController: UIViewController {
             let point = Point(x: x, y: y)
             if let randomSquare = ShapeFactory.makeShape(point: point, size: size, kind: .randomRectangle) {
                 // TODO: 뷰에 추가하기
-                customLogger.log("\(name) \(randomSquare.description)")
+                logger.log("\(name) \(randomSquare.description)")
             }
             else {
-                customLogger.log("SquareFactory failed to generate RandomSquare in addRandomSquares")
+                logger.log("SquareFactory failed to generate RandomSquare in addRandomSquares")
             }
         }
     }
@@ -143,6 +157,10 @@ class ViewController: UIViewController {
         let y = Double(cgpoint.y)
         
         return Point(x: x, y: y)
+    }
+    
+    func setBackgroundColorOf(_ shapeView: ShapeView, with color: UIColor) {
+        shapeView.backgroundColor = color
     }
 }
 

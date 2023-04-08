@@ -11,14 +11,22 @@ class Rectangle: Shape {
     let id: Id
     let point: Point
     let size: Size
-    let backgroundColor: Color
-    let alpha: Alpha
+    private(set) var backgroundColor: Color
+    private(set) var alpha: Alpha
     
     init(id: Id, point: Point, size: Size, bgColor: Color, alpha: Alpha) {
         self.id = id
         self.point = point
         self.size = size
         self.backgroundColor = bgColor
+        self.alpha = alpha
+    }
+    
+    func setBackgroundColorWith(_ color: Color) {
+        self.backgroundColor = color
+    }
+    
+    func setAlphaWith(_ alpha: Alpha) {
         self.alpha = alpha
     }
 }

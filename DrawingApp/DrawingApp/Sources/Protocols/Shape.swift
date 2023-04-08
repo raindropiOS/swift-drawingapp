@@ -10,4 +10,7 @@ import Foundation
 protocol Shape: Colorable, HaveId, CustomStringConvertible {
     var point: Point { get }
     var size: Size { get }
+    
+    func setBackgroundColorWith(_ color: Color)
+    func setAlphaWith(_ alpha: Alpha) 
 }

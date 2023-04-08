@@ -48,7 +48,7 @@
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="backgroundColorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="unN-2v-Gfn"/>
+                                            <action selector="backgroundColorChangeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="unN-2v-Gfn"/>
                                         </connections>
                                     </button>
                                 </subviews>
