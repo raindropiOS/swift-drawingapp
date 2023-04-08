@@ -15,13 +15,12 @@ struct Plane {
         components.count
     }
     
+    subscript(index: Int) -> Shape? {
+        components[index]
+    }
     
     mutating func addShape(_ shape: Shape) {
         components.append(shape)
-    }
-    
-    func returnComponent(at index: Int) -> Shape? {
-        components[index]
     }
     
     func returnComponent(id: Id) -> Shape? {
