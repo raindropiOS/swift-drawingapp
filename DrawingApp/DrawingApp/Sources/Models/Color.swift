@@ -8,7 +8,7 @@
 import Foundation
 
 struct Color {
-    let r: Float
-    let g: Float
-    let b: Float
+    @RangedValue(minimum: 0, maximum: 1.0) var r: Float = 0.5
+    @RangedValue(minimum: 0, maximum: 1.0) var g: Float = 0.5
+    @RangedValue(minimum: 0, maximum: 1.0) var b: Float = 0.5
 }
