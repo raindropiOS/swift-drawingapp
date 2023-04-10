@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     let logger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
     let rectangleSize: Size = Size(width: 150, height: 120)
     let selectedShapeBorderColor: CGColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
+    lazy var canvasViewWidth = self.canvasView.frame.size.width
+    lazy var canvasViewHeight = self.canvasView.frame.size.height
     let selectedShapeBorderWidth: CGFloat = 4.0
     
     override func viewDidLoad() {
@@ -101,27 +103,14 @@ class ViewController: UIViewController {
         
         for num in 1...count {
             let name = "Rect\(num)"
-            let xBoundary = 0...self.canvasView.frame.size.width - size.width
-            let yBoundary = 0...self.canvasView.frame.size.height - size.height
-            let x = Double.random(in: xBoundary)
-            let y = Double.random(in: yBoundary)
-            let point = Point(x: x, y: y)
-            if let randomSquare = shapeFactory.makeShape(origin: point, size: size, kind: .randomRectangle) {
-                logger.log("\(name) \(randomSquare.description)")
+            
+            if let randomRectangle = shapeFactory.makeRandomSqure(sizeOfView: Point(x: canvasViewWidth, y: canvasViewWidth), rectangleSize: rectangleSize) {
+                logger.log("\(name) \(randomRectangle.description)")
             }
             else {
                 logger.log("SquareFactory failed to generate RandomSquare in addRandomSquares")
             }
         }
-    }
-    
-    func generateRandomPoint(basedOn size: Size) -> Point {
-        let xBoundary = 0...self.canvasView.frame.size.width - size.width
-        let yBoundary = 0...self.canvasView.frame.size.height - size.height
-        let x = Double.random(in: xBoundary)
-        let y = Double.random(in: yBoundary)
-        
-        return Point(x: x, y: y)
     }
     
     func returnRectangleViewFrom(shape: Shape) -> UIView {
@@ -135,9 +124,9 @@ class ViewController: UIViewController {
     }
     
     func drawRandomRectangle(size: Size) {
-        let randomPoint = generateRandomPoint(basedOn: size)
         
-        if let randomRectangle = shapeFactory.makeShape(origin: randomPoint, size: size, kind: .randomRectangle) {
+        
+        if let randomRectangle = shapeFactory.makeRandomSqure(sizeOfView: Point(x: canvasViewWidth, y: canvasViewHeight), rectangleSize: rectangleSize) {
             let uiView = returnRectangleViewFrom(shape: randomRectangle)
             self.canvasView.insertSubview(uiView, belowSubview: addShapeButton)
         } else {

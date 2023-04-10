@@ -21,6 +21,18 @@ class ShapeFactory: ShapeProducible {
         }
     }
     
+    func makeRandomSqure(sizeOfView: Point, rectangleSize: Size) -> Shape? {
+        guard let id = IdGenerator.generateId(length: 9, separateAt: 4) else { return nil }
+        let randomColor = colorFactory.makeRandomColor()
+        let randomAlpha = colorFactory.makeRandomAlpha()
+        let xBoundary = 0...sizeOfView.x - rectangleSize.width
+        let yBoundary = 0...sizeOfView.y - rectangleSize.height
+        let x = Double.random(in: xBoundary)
+        let y = Double.random(in: yBoundary)
+        
+        return Rectangle(id: id, origin: Point(x: x, y: y), size: rectangleSize, bgColor: randomColor, alpha: randomAlpha)
+    }
+    
     func returnRandomSquare(origin: Point, size: Size) -> Rectangle? {
         guard let id = IdGenerator.generateId(length: 9, separateAt: 4) else { return nil }
         let randomColor = colorFactory.makeRandomColor()
