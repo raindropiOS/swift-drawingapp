@@ -91,10 +91,14 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="XFq-Nu-6DW" firstAttribute="centerX" secondItem="n8v-ZR-AiM" secondAttribute="centerX" id="JJZ-LK-rG4"/>
                                     <constraint firstAttribute="bottom" secondItem="XFq-Nu-6DW" secondAttribute="bottom" id="Rl9-Aa-Xah"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eWy-8B-IHD" appends="YES" id="4p8-gu-U1s"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -109,22 +113,19 @@
                             <constraint firstItem="Igg-HF-unD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hnl-pG-1wt"/>
                             <constraint firstItem="n8v-ZR-AiM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lqV-Oz-ywz"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="FK7-ne-XIU" appends="YES" id="Smp-Gd-I5X"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="RectangleColorControl" destination="Igg-HF-unD" id="yFe-TT-81H"/>
                         <outlet property="alphaSlider" destination="WcK-m2-PQL" id="KId-0b-pV3"/>
                         <outlet property="backgroundColorChangeButton" destination="iDp-Ch-bOh" id="JuU-Yt-zXs"/>
                         <outlet property="canvasView" destination="n8v-ZR-AiM" id="44Z-O3-HLn"/>
-                        <outlet property="tapGestureRecognizer" destination="FK7-ne-XIU" id="kNu-No-V2y"/>
+                        <outlet property="tapGestureRecognizer" destination="eWy-8B-IHD" id="Ab9-GL-EBC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="FK7-ne-XIU">
+                <tapGestureRecognizer id="eWy-8B-IHD">
                     <connections>
-                        <action selector="tapView:" destination="BYZ-38-t0r" id="ZYq-RU-JXp"/>
+                        <action selector="tapView:" destination="BYZ-38-t0r" id="2wx-E6-eIp"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

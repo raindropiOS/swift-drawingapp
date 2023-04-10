@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
-        let cgPoint: CGPoint = tapGestureRecognizer.location(in: self.view)
+        let cgPoint: CGPoint = tapGestureRecognizer.location(in: self.canvasView)
         let point: Point = returnPointFrom(cgpoint: cgPoint)
         let tappedShape: Shape? = plane.returnForefrontShape(at: point)
         
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
     }
     
     func findShapeView(with id: Id) -> ShapeView? {
-        for subview in self.view.subviews {
+        for subview in self.canvasView.subviews {
             if let selectedView = subview as? ShapeView {
                 if selectedView.id.value == id.value {
                     return selectedView
@@ -135,7 +135,8 @@ class ViewController: UIViewController {
         
         if let randomRectangle = shapeFactory.makeShape(origin: randomPoint, size: size, kind: .randomRectangle) {
             let uiView = returnRectangleViewFrom(shape: randomRectangle)
-            self.view.addSubview(uiView)
+            self.canvasView.addSubview(uiView)
+//            self.view.addSubview(uiView)
         } else {
             logger.log("[ViewController.drawRandomRectangle] shapeFactory.makeShape가 nil을 반환했습니다. Shape가 만들어지지 않았습니다.")
         }
