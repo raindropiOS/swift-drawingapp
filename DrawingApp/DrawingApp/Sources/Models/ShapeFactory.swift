@@ -9,9 +9,12 @@ import Foundation
 
 class ShapeFactory: ShapeProducible {
     let colorFactory: ColorAlphaProducible
+    let idFactory: IdProducible
+    
     
     init() {
         colorFactory = ColorFactory()
+        idFactory = IdFactory()
     }
     
     func makeShape(origin: Point, size: Size, kind: ShapeKind) -> Shape? {
@@ -22,7 +25,7 @@ class ShapeFactory: ShapeProducible {
     }
     
     func makeRandomSqure(sizeOfView: Point, rectangleSize: Size) -> Shape? {
-        guard let id = IdGenerator.generateId(length: 9, separateAt: 4) else { return nil }
+        guard let id = idFactory.makeId(length: 9, separateAt: 4) else { return nil }
         let randomColor = colorFactory.makeRandomColor()
         let randomAlpha = colorFactory.makeRandomAlpha()
         let xBoundary = 0...sizeOfView.x - rectangleSize.width
@@ -34,7 +37,7 @@ class ShapeFactory: ShapeProducible {
     }
     
     func returnRandomSquare(origin: Point, size: Size) -> Rectangle? {
-        guard let id = IdGenerator.generateId(length: 9, separateAt: 4) else { return nil }
+        guard let id = idFactory.makeId(length: 9, separateAt: 4) else { return nil }
         let randomColor = colorFactory.makeRandomColor()
         let randomAlpha = colorFactory.makeRandomAlpha()
         
