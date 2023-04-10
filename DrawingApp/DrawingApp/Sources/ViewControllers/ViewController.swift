@@ -11,19 +11,19 @@ import OSLog
 class ViewController: UIViewController {
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var canvasView: UIView!
+    @IBOutlet weak var RectangleColorControl: UIView!
     @IBOutlet weak var addShapeButton: UIButton!
     @IBOutlet weak var alphaSlider: UISlider!
     @IBOutlet weak var backgroundColorChangeButton: UIButton!
-    @IBOutlet weak var RectangleColorControl: UIView!
     var selectedShapeView: ShapeView?
     var plane: PlaneLike = Plane()
     let shapeFactory: ShapeProducible = ShapeFactory()
     let colorFactory: ColorAlphaProducible = ColorFactory()
     let logger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
-    let rectangleSize: Size = Size(width: 150, height: 120)
-    let selectedShapeBorderColor: CGColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
     lazy var canvasViewWidth = self.canvasView.frame.size.width
     lazy var canvasViewHeight = self.canvasView.frame.size.height
+    let rectangleSize: Size = Size(width: 150, height: 120)
+    let selectedShapeBorderColor: CGColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
     let selectedShapeBorderWidth: CGFloat = 4.0
     
     override func viewDidLoad() {
@@ -124,8 +124,6 @@ class ViewController: UIViewController {
     }
     
     func drawRandomRectangle(size: Size) {
-        
-        
         if let randomRectangle = shapeFactory.makeRandomSqure(sizeOfView: Point(x: canvasViewWidth, y: canvasViewHeight), rectangleSize: rectangleSize) {
             let uiView = returnRectangleViewFrom(shape: randomRectangle)
             self.canvasView.insertSubview(uiView, belowSubview: addShapeButton)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RectangleView: UIView, ShapeView, HaveId {
+class RectangleView: UIView, ShapeView {
     var id: Id
     
     init(frame: CGRect, id: Id) {
