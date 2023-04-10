@@ -40,7 +40,6 @@ struct Plane {
         component.setAlphaWith(alpha)
     }
     
-    
     func returnForefrontShape(at point: Point) -> Shape? {
         var foreFrontShapeWhichIncludesPoint: Shape? = nil
             

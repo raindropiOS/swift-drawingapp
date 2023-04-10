@@ -54,15 +54,12 @@ class ViewController: UIViewController {
             // 새롭게 선택된 shape 처리
             if let newlySelectedShapeView = findShapeView(with: shape.id) {
                 newlySelectedShapeView.layer.borderWidth = 3.0
-                //TODO: alph값 1.0으로 변경하기
                 newlySelectedShapeView.layer.borderColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
-                //TODO: slider 값 설정 부분 수정
                 if let backgroundColor = newlySelectedShapeView.backgroundColor {
                     alphaSlider.setValue(Float(backgroundColor.getBackgroundColorAlpha()), animated: true)
                     backgroundColorChangeButton.setTitle(backgroundColor.toHexString(), for: .normal)
                 }
                 selectedShapeView = newlySelectedShapeView
-                    
             }
         } else {
             // Shape이 존재하지 않는 곳을 탭했을 때
@@ -106,7 +103,6 @@ class ViewController: UIViewController {
             let y = Double.random(in: yBoundary)
             let point = Point(x: x, y: y)
             if let randomSquare = shapeFactory.makeShape(origin: point, size: size, kind: .randomRectangle) {
-                // TODO: 뷰에 추가하기
                 logger.log("\(name) \(randomSquare.description)")
             }
             else {
@@ -141,7 +137,7 @@ class ViewController: UIViewController {
             let uiView = returnRectangleViewFrom(shape: randomRectangle)
             self.view.addSubview(uiView)
         } else {
-            //TODO: 불필요한 else문 삭제
+            logger.log("[ViewController.drawRandomRectangle] shapeFactory.makeShape가 nil을 반환했습니다. Shape가 만들어지지 않았습니다.")
         }
     }
     
