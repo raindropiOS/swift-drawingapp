@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     let logger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
     let rectangleSize: Size = Size(width: 150, height: 120)
     let selectedShapeBorderColor: CGColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
+    let selectedShapeBorderWidth: CGFloat = 4.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
             selectedShapeView?.layer.borderWidth = 0.0
             // 새롭게 선택된 shape 처리
             if let newlySelectedShapeView = findShapeView(with: shape.id) {
-                newlySelectedShapeView.layer.borderWidth = 3.0
+                newlySelectedShapeView.layer.borderWidth = selectedShapeBorderWidth
                 newlySelectedShapeView.layer.borderColor = selectedShapeBorderColor
                 if let backgroundColor = newlySelectedShapeView.backgroundColor {
                     alphaSlider.setValue(Float(backgroundColor.getBackgroundColorAlpha()), animated: true)
