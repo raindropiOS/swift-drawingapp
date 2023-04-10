@@ -82,11 +82,11 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="bWc-VE-S3Z"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="사각형">
+                                        <buttonConfiguration key="configuration" style="plain" title="도형 추가">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="rectangleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5x9-tJ-AKa"/>
+                                            <action selector="AddShapeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5x9-tJ-AKa"/>
                                         </connections>
                                     </button>
                                 </subviews>

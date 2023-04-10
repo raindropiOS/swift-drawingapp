@@ -82,7 +82,7 @@ class ViewController: UIViewController {
         selectedShapeView?.backgroundColor = newAlphaValueColor
     }
     
-    @IBAction func rectangleButtonPressed(_ sender: Any) {
+    @IBAction func AddShapeButtonPressed(_ sender: Any) {
         drawRandomRectangle(size: rectangleSize)
     }
     
