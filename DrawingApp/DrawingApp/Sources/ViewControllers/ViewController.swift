@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     let colorFactory: ColorAlphaProducible = ColorFactory()
     let logger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
     let rectangleSize: Size = Size(width: 150, height: 120)
+    let selectedShapeBorderColor: CGColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
             // 새롭게 선택된 shape 처리
             if let newlySelectedShapeView = findShapeView(with: shape.id) {
                 newlySelectedShapeView.layer.borderWidth = 3.0
-                newlySelectedShapeView.layer.borderColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
+                newlySelectedShapeView.layer.borderColor = selectedShapeBorderColor
                 if let backgroundColor = newlySelectedShapeView.backgroundColor {
                     alphaSlider.setValue(Float(backgroundColor.getBackgroundColorAlpha()), animated: true)
                     backgroundColorChangeButton.setTitle(backgroundColor.toHexString(), for: .normal)
