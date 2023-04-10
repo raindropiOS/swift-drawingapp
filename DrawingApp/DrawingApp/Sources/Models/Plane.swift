@@ -8,7 +8,7 @@
 import Foundation
 import OSLog
 
-struct Plane {
+struct Plane: PlaneLike {
     private var components: [Shape] = []
     let logger = Logger()
     var count: Int {

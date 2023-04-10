@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var backgroundColorChangeButton: UIButton!
     @IBOutlet weak var RectangleColorControl: UIView!
     var selectedShapeView: ShapeView?
-    var plane = Plane()
+    var plane: PlaneLike = Plane()
     let shapeFactory: ShapeProducible = ShapeFactory()
     let colorFactory: ColorAlphaProducible = ColorFactory()
     let logger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
