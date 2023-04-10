@@ -116,6 +116,7 @@
                     </view>
                     <connections>
                         <outlet property="RectangleColorControl" destination="Igg-HF-unD" id="yFe-TT-81H"/>
+                        <outlet property="addShapeButton" destination="XFq-Nu-6DW" id="BHv-Gk-TFD"/>
                         <outlet property="alphaSlider" destination="WcK-m2-PQL" id="KId-0b-pV3"/>
                         <outlet property="backgroundColorChangeButton" destination="iDp-Ch-bOh" id="JuU-Yt-zXs"/>
                         <outlet property="canvasView" destination="n8v-ZR-AiM" id="44Z-O3-HLn"/>

@@ -11,6 +11,7 @@ import OSLog
 class ViewController: UIViewController {
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var canvasView: UIView!
+    @IBOutlet weak var addShapeButton: UIButton!
     @IBOutlet weak var alphaSlider: UISlider!
     @IBOutlet weak var backgroundColorChangeButton: UIButton!
     @IBOutlet weak var RectangleColorControl: UIView!
@@ -135,8 +136,7 @@ class ViewController: UIViewController {
         
         if let randomRectangle = shapeFactory.makeShape(origin: randomPoint, size: size, kind: .randomRectangle) {
             let uiView = returnRectangleViewFrom(shape: randomRectangle)
-            self.canvasView.addSubview(uiView)
-//            self.view.addSubview(uiView)
+            self.canvasView.insertSubview(uiView, belowSubview: addShapeButton)
         } else {
             logger.log("[ViewController.drawRandomRectangle] shapeFactory.makeShape가 nil을 반환했습니다. Shape가 만들어지지 않았습니다.")
         }
