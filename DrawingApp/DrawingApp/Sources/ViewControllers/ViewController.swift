@@ -20,11 +20,12 @@ class ViewController: UIViewController {
     let shapeFactory: ShapeProducible = ShapeFactory()
     let colorFactory: ColorAlphaProducible = ColorFactory()
     let logger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
+    let rectangleSize: Size = Size(width: 150, height: 120)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Logger로 출력만 하고 뷰에 그리진 않음
-        addRandomRectangles(count: 4, size: Size(width: 150, height: 120))
+        addRandomRectangles(count: 4, size: rectangleSize)
     }
     
     @IBAction func backgroundColorChangeButtonPressed(_ sender: Any) {
@@ -78,7 +79,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func rectangleButtonPressed(_ sender: Any) {
-        drawRandomRectangle(size: Size(width: 150, height: 120))
+        drawRandomRectangle(size: rectangleSize)
     }
     
     func findShapeView(with id: Id) -> ShapeView? {
