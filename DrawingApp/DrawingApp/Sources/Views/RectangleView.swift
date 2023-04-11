@@ -15,9 +15,9 @@ class RectangleView: UIView, ShapeView {
         super.init(frame: frame)
     }
     
-    // 어쩔 수 없이 작성한 init
     required init?(coder: NSCoder) {
-        id = Id(value: "error")
+        let idFactory = IdFactory()
+        id = idFactory.makeId(length: 9, separateAt: 4) ?? Id(value: "")
         super.init(coder: coder)
     }
 }
