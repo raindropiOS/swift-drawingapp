@@ -23,5 +23,4 @@ class ColorFactory: ColorAlphaProducible {
     func makeRandomAlpha() -> Alpha {
         Alpha.allCases.randomElement() ?? .ten
     }
-    
 }

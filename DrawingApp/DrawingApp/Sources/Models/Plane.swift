@@ -8,7 +8,7 @@
 import Foundation
 import OSLog
 
-struct Plane {
+struct Plane: PlaneLike {
     private var components: [Shape] = []
     let logger = Logger()
     var count: Int {
@@ -32,14 +32,12 @@ struct Plane {
     func setComponentColorWith(_ color: Color, id: Id) {
         guard let component = returnComponent(id: id) else {logger.log("[Plane.setComponentColorWith] components에서 일치하는 id 없음"); return}
         component.setBackgroundColorWith(color)
-        
     }
     
     func setComponentAlphaWith(_ alpha: Alpha, id: Id) {
         guard let component = returnComponent(id: id) else {logger.log("[Plane.setComponentAlphaWith] components에서 일치하는 id 없음"); return}
         component.setAlphaWith(alpha)
     }
-    
     
     func returnForefrontShape(at point: Point) -> Shape? {
         var foreFrontShapeWhichIncludesPoint: Shape? = nil

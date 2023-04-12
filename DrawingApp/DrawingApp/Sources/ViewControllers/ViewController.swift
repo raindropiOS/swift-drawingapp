@@ -11,19 +11,25 @@ import OSLog
 class ViewController: UIViewController {
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var canvasView: UIView!
+    @IBOutlet weak var RectangleColorControl: UIView!
+    @IBOutlet weak var addShapeButton: UIButton!
     @IBOutlet weak var alphaSlider: UISlider!
     @IBOutlet weak var backgroundColorChangeButton: UIButton!
-    @IBOutlet weak var RectangleColorControl: UIView!
     var selectedShapeView: ShapeView?
-    var plane = Plane()
+    var plane: PlaneLike = Plane()
     let shapeFactory: ShapeProducible = ShapeFactory()
     let colorFactory: ColorAlphaProducible = ColorFactory()
     let logger = Logger(subsystem: "com.eddie.DrawingApp", category: "ViewController")
+    lazy var canvasViewWidth = self.canvasView.frame.size.width
+    lazy var canvasViewHeight = self.canvasView.frame.size.height
+    let rectangleSize: Size = Size(width: 150, height: 120)
+    let selectedShapeBorderColor: CGColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
+    let selectedShapeBorderWidth: CGFloat = 4.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Logger로 출력만 하고 뷰에 그리진 않음
-        addRandomRectangles(count: 4, size: Size(width: 150, height: 120))
+        addRandomRectangles(count: 4, size: rectangleSize)
     }
     
     @IBAction func backgroundColorChangeButtonPressed(_ sender: Any) {
@@ -43,7 +49,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
-        let cgPoint: CGPoint = tapGestureRecognizer.location(in: self.view)
+        let cgPoint: CGPoint = tapGestureRecognizer.location(in: self.canvasView)
         let point: Point = returnPointFrom(cgpoint: cgPoint)
         let tappedShape: Shape? = plane.returnForefrontShape(at: point)
         
@@ -53,16 +59,13 @@ class ViewController: UIViewController {
             selectedShapeView?.layer.borderWidth = 0.0
             // 새롭게 선택된 shape 처리
             if let newlySelectedShapeView = findShapeView(with: shape.id) {
-                newlySelectedShapeView.layer.borderWidth = 3.0
-                //TODO: alph값 1.0으로 변경하기
-                newlySelectedShapeView.layer.borderColor = CGColor(red: 170/255, green: 74/255, blue: 68/255, alpha: 1.0)
-                //TODO: slider 값 설정 부분 수정
+                newlySelectedShapeView.layer.borderWidth = selectedShapeBorderWidth
+                newlySelectedShapeView.layer.borderColor = selectedShapeBorderColor
                 if let backgroundColor = newlySelectedShapeView.backgroundColor {
                     alphaSlider.setValue(Float(backgroundColor.getBackgroundColorAlpha()), animated: true)
                     backgroundColorChangeButton.setTitle(backgroundColor.toHexString(), for: .normal)
                 }
                 selectedShapeView = newlySelectedShapeView
-                    
             }
         } else {
             // Shape이 존재하지 않는 곳을 탭했을 때
@@ -79,12 +82,12 @@ class ViewController: UIViewController {
         selectedShapeView?.backgroundColor = newAlphaValueColor
     }
     
-    @IBAction func rectangleButtonPressed(_ sender: Any) {
-        drawRandomRectangle(size: Size(width: 150, height: 120))
+    @IBAction func AddShapeButtonPressed(_ sender: Any) {
+        drawRandomRectangle(size: rectangleSize)
     }
     
     func findShapeView(with id: Id) -> ShapeView? {
-        for subview in self.view.subviews {
+        for subview in self.canvasView.subviews {
             if let selectedView = subview as? ShapeView {
                 if selectedView.id.value == id.value {
                     return selectedView
@@ -100,28 +103,14 @@ class ViewController: UIViewController {
         
         for num in 1...count {
             let name = "Rect\(num)"
-            let xBoundary = 0...self.canvasView.frame.size.width - size.width
-            let yBoundary = 0...self.canvasView.frame.size.height - size.height
-            let x = Double.random(in: xBoundary)
-            let y = Double.random(in: yBoundary)
-            let point = Point(x: x, y: y)
-            if let randomSquare = shapeFactory.makeShape(origin: point, size: size, kind: .randomRectangle) {
-                // TODO: 뷰에 추가하기
-                logger.log("\(name) \(randomSquare.description)")
+            
+            if let randomRectangle = shapeFactory.makeRandomSqure(sizeOfView: Point(x: canvasViewWidth, y: canvasViewWidth), rectangleSize: rectangleSize) {
+                logger.log("\(name) \(randomRectangle.description)")
             }
             else {
                 logger.log("SquareFactory failed to generate RandomSquare in addRandomSquares")
             }
         }
-    }
-    
-    func generateRandomPoint(basedOn size: Size) -> Point {
-        let xBoundary = 0...self.canvasView.frame.size.width - size.width
-        let yBoundary = 0...self.canvasView.frame.size.height - size.height
-        let x = Double.random(in: xBoundary)
-        let y = Double.random(in: yBoundary)
-        
-        return Point(x: x, y: y)
     }
     
     func returnRectangleViewFrom(shape: Shape) -> UIView {
@@ -135,13 +124,11 @@ class ViewController: UIViewController {
     }
     
     func drawRandomRectangle(size: Size) {
-        let randomPoint = generateRandomPoint(basedOn: size)
-        
-        if let randomRectangle = shapeFactory.makeShape(origin: randomPoint, size: size, kind: .randomRectangle) {
+        if let randomRectangle = shapeFactory.makeRandomSqure(sizeOfView: Point(x: canvasViewWidth, y: canvasViewHeight), rectangleSize: rectangleSize) {
             let uiView = returnRectangleViewFrom(shape: randomRectangle)
-            self.view.addSubview(uiView)
+            self.canvasView.insertSubview(uiView, belowSubview: addShapeButton)
         } else {
-            //TODO: 불필요한 else문 삭제
+            logger.log("[ViewController.drawRandomRectangle] shapeFactory.makeShape가 nil을 반환했습니다. Shape가 만들어지지 않았습니다.")
         }
     }
     

@@ -10,24 +10,23 @@ import UIKit
 extension UIColor {
     // https://stackoverflow.com/questions/49150872/how-to-convert-rgb-values-to-hex-string-ios-swift
     func toHexString() -> String {
-            var r:CGFloat = 0
-            var g:CGFloat = 0
-            var b:CGFloat = 0
-            var a:CGFloat = 0
-
-            getRed(&r, green: &g, blue: &b, alpha: &a)
-
-            let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
-
-            return NSString(format:"#%06x", rgb) as String
-        }
+        var r:CGFloat = 0
+        var g:CGFloat = 0
+        var b:CGFloat = 0
+        var a:CGFloat = 0
+        
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+        
+        return NSString(format:"#%06x", rgb) as String
+    }
     
     func getBackgroundColorAlpha() -> CGFloat {
         var r:CGFloat = 0
         var g:CGFloat = 0
         var b:CGFloat = 0
         var alpha:CGFloat = 0
-
+        
         getRed(&r, green: &g, blue: &b, alpha: &alpha)
         return alpha
     }
@@ -39,7 +38,7 @@ extension UIColor {
         let g: Int = Int(String(strArr[3...4]), radix: 16) ?? 0
         let b: Int = Int(String(strArr[5...6]), radix: 16) ?? 0
         let alpha: CGFloat = CGFloat(alpha.rawValue)
-
+        
         self.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: alpha)
     }
 }
