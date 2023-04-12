@@ -32,7 +32,6 @@ struct Plane: PlaneLike {
     func setComponentColorWith(_ color: Color, id: Id) {
         guard let component = returnComponent(id: id) else {logger.log("[Plane.setComponentColorWith] components에서 일치하는 id 없음"); return}
         component.setBackgroundColorWith(color)
-        
     }
     
     func setComponentAlphaWith(_ alpha: Alpha, id: Id) {

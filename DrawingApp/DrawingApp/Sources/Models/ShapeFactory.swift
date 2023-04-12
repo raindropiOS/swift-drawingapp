@@ -11,7 +11,6 @@ class ShapeFactory: ShapeProducible {
     let colorFactory: ColorAlphaProducible
     let idFactory: IdProducible
     
-    
     init() {
         colorFactory = ColorFactory()
         idFactory = IdFactory()
